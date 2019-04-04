@@ -59,19 +59,19 @@ export class EventPageComp extends React.Component<EventProps> {
                                                 <div className='event__information__wrapper'>
                                                     <div className='event__information'>
                                                         <div className='event__information-city'>
-                                                            {event.address}
+                                                            {event.city}
                                                         </div>
                                                         <div className='event__information-time'>
                                                             <div>{t('startingIn')}:</div>
-                                                            <div>18:00</div>
+                                                            <div>{event.begginingInTime}</div>
                                                         </div>
                                                         <div className='event__information-date'>
                                                             <div>{t('eventDate')}:</div>
-                                                            <div>2018-07-29</div>
+                                                            <div>{event.begginingDate}</div>
                                                         </div>
                                                         <div className='event__information-place'>
                                                             <div>{t('eventPlace')}:</div>
-                                                            <div>Косманавтов 19</div>
+                                                            <div>{`${event.place} ${event.address}`}</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -85,7 +85,7 @@ export class EventPageComp extends React.Component<EventProps> {
                                                 </div>
                                                 <div className='event__place'>
                                                     <div className='event__place-address'>
-                                                        <p>г.Могилев, Косманавтов 19</p>
+                                                        <p>{`${event.city}, ${event.place} ${event.address}`}</p>
                                                     </div>
                                                     <div className='event__place-map'>
                                                         <YandexMap positionX={53.908087} positionY={30.308924} zoom={17} />
