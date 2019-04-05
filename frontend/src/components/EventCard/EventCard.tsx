@@ -7,44 +7,43 @@ import { NavLink } from 'react-router-dom';
 
 export class CaEventCard extends React.PureComponent<EventCardProps> {
   render() {
-    const { id, title, city, place, begginingInTime, begginingDate } = this.props;
+    const { id, title, city, begginingDate } = this.props;
     return (
-      <div className='ca-about_card'>
-        <div className='ca-about_card_img'>
-          <I18n>
-            {
-              t => (
-                <NavLink to={`/event/${id}`} >
-                  <button className='ca-about_card_img_btn'>{t('JOIN US')}</button>
-                </NavLink>
-              )
-            }
-          </I18n>
-        </div>
-        <div className='ca-about_card_information'>
-          <div className='ca-about_card_information_date'>
-            <div className='ca-about_card_information_date_month'>
-              {begginingDate}
-            </div>
-            <div className='ca-about_card_information_date_num'>
-              {begginingInTime}
-            </div>
-          </div>
-          <div className='ca-about_card_information_text'>
-            <div className='ca-about_card_information_text_title'>
-              {title}
-            </div>
-            <div className='ca-about_card_information_text_time-address'>
-              <div className='ca-about_card_information_text_time'>
-                {city}
+      <I18n>
+      {
+        t => (
+          <NavLink to={`/event/${id}`} >
+            <div className='ca-about_card'>
+              <div className='ca-about_card_img'>
+                <div className='ca-about_card_img-bookmark'>
+                  <img src='../../assets/svg/icon-bookmark--check.svg' />
+                </div>
               </div>
-              <div className='ca-about_card_information_text_address'>
-                {place}
+              <div className='ca-about_card_information'>
+                <div className='ca-about_card_information_title'>
+                  {title}
+                </div>
+                <div className='ca-about_card_information_date'>
+                  <img src='../../assets/svg/icon-calendar--green.svg' />
+                  <div className='ca-about_card_information_date-number'>
+                    {begginingDate}
+                  </div>
+                </div>
+                <div className='ca-about_card_information_city'>
+                  <img src='../../assets/svg/icon-location.svg' />
+                  <div className='ca-about_card_information_city-title'>
+                    {city}
+                  </div>
+                </div>
+                <div className='ca-about_card_information_skills'>
+                  Java,C++,Ruby,Go
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </NavLink>
+        )
+      }
+      </I18n>
     );
   }
 }

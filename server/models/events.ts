@@ -24,7 +24,7 @@ export const EventModel: SequelizeStaticAndInstance['Model'] = db.connect.define
       autoIncrement: true
     },
     title: {
-      type: Sequelize.STRING(50),
+      type: Sequelize.STRING(70),
       allowNull: false,
       validate: {
         notEmpty: true
