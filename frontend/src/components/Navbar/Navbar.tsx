@@ -14,7 +14,6 @@ export const CaNavbar = (props: NavbarProps) => {
           {props.linksToRender &&
             props.linksToRender.map((link: Link, index: number) => {
               return (
-                !link.disabled &&
                 <NavLink
                   key={index}
                   to={link.to}

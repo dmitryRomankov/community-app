@@ -44,16 +44,13 @@ import {
 } from 'store';
 
 import {
-  getCurrentLanguage,
   getCurrentLanguageFromLocalStorage,
   setAuthToken
 } from 'utils';
 
 import {
-  AppMenu,
   CaLogo,
   CaNavbar,
-  CaSelect,
   CaSnackbar,
   LoginForm,
   ProtectedRoute,
@@ -64,7 +61,6 @@ import {
   AppMenuItem,
   AuthStatus,
   ErrorBlock,
-  Languages,
   transitionDirection,
 } from 'models';
 
@@ -162,14 +158,14 @@ export class RootComponent extends React.Component<RootProps> {
 
   public getNavbar(authStatus: number): JSX.Element {
 
-    const isAuthorized = authStatus === AuthStatus.Authorized;
+    // const isAuthorized = authStatus === AuthStatus.Authorized;
     let appMenuItems: AppMenuItem[] = [];
 
     this.props.appMenuLinks.filter(item => {
       appMenuItems = this.generateAppMenuItems(item, appMenuItems);
     });
 
-    const { user, isSnackbarOpen, snackbarType, errors } = this.props;
+    const { isSnackbarOpen, snackbarType, errors } = this.props;
 
     return (
       <I18n>{
@@ -177,57 +173,36 @@ export class RootComponent extends React.Component<RootProps> {
           <CaNavbar
             linksToRender={[
               {
-                text: t('battles'),
-                to: '/battles',
-                activeClassName: 'ca-navbar__nav-item--active',
-                disabled: !isAuthorized
-              },
-              {
-                text: t('statistics'),
-                to: '/statistics',
-                activeClassName: 'ca-navbar__nav-item--active',
-                disabled: !isAuthorized
-              },
-              {
-                text: t('events'),
+                text: t('Events'),
                 to: '/events',
                 activeClassName: 'ca-navbar__nav-item--active',
-                disabled: !isAuthorized
               },
               {
-                text: t('about'),
-                to: '/about',
+                text: t('Games'),
+                to: '/battles',
                 activeClassName: 'ca-navbar__nav-item--active',
-                disabled: !isAuthorized
+              },
+              {
+                text: t('Teams'),
+                to: '/teams',
+                activeClassName: 'ca-navbar__nav-item--active',
               }
             ]}
           >
-            <div className='ca-navbar__menu-container'>
-              {
-                isAuthorized ?
-                  <>
-                    <AppMenu appMenuItems={appMenuItems} imageUrl={user && user.imageUrl} >
-                      {this.getMenuProfilePanel()}
-                    </AppMenu>
-                    <div className='ca-navbar__profile-name'>{user && user.name}</div>
-                  </>
-                  : null
-              }
-            </div>
 
             <CaLogo
-              text='battlenet'
+              text='Codding Dojo'
               onClick={this.redToMainPage}
             />
 
-            <div className='ca-navbar__select-language'>
+            {/* <div className='ca-navbar__select-language'>
               <CaSelect
                 values={[Languages.En, Languages.Ru]}
                 displayedValues={[t('ENToggle'), t('RUToggle')]}
                 handleChange={this.handleChange}
                 currentValue={getCurrentLanguage(i18n)}
               />
-            </div>
+            </div> */}
 
             <CaSnackbar
               anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
@@ -250,6 +225,7 @@ export class RootComponent extends React.Component<RootProps> {
       </I18n>
     );
   }
+
   public render(): JSX.Element {
     const { status } = this.props;
     return (
