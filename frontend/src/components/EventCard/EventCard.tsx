@@ -17,29 +17,29 @@ export class CaEventCard extends React.PureComponent<EventCardProps> {
       {
         t => (
           <NavLink to={`/event/${id}`} >
-            <div className='ca-about_card'>
-              <div className='ca-about_card_img'>
-                <div className='ca-about_card_img-bookmark'>
+            <div className='card'>
+              <div className='img'>
+                <div className='img__bookmark'>
                   <img src={bookmark} alt='' />
                 </div>
               </div>
-              <div className='ca-about_card_information'>
-                <div className='ca-about_card_information_title'>
+              <div className='information'>
+                <div className='information__title'>
                   {title}
                 </div>
-                <div className='ca-about_card_information_date'>
+                <div className='date'>
                   <img src={calendarGreen} alt='' />
-                  <div className='ca-about_card_information_date-number'>
+                  <div className='date__number'>
                     {begginingDate}
                   </div>
                 </div>
-                <div className='ca-about_card_information_city'>
+                <div className='city'>
                   <img src={location} alt='' />
-                  <div className='ca-about_card_information_city-title'>
+                  <div className='city__title'>
                     {city}
                   </div>
                 </div>
-                <div className='ca-about_card_information_skills'>
+                <div className='information__skills'>
                   Java,C++,Ruby,Go
                 </div>
               </div>
