@@ -5,6 +5,10 @@ import './EventCard.scss';
 import { EventCardProps } from './EventCard.model';
 import { NavLink } from 'react-router-dom';
 
+import bookmark from 'assets/svg/icon-bookmark--check.svg';
+import calendarGreen from 'assets/svg/icon-calendar--green.svg';
+import location from 'assets/svg/icon-location.svg';
+
 export class CaEventCard extends React.PureComponent<EventCardProps> {
   render() {
     const { id, title, city, begginingDate } = this.props;
@@ -16,7 +20,7 @@ export class CaEventCard extends React.PureComponent<EventCardProps> {
             <div className='ca-about_card'>
               <div className='ca-about_card_img'>
                 <div className='ca-about_card_img-bookmark'>
-                  <img src='../../assets/svg/icon-bookmark--check.svg' />
+                  <img src={bookmark} alt='' />
                 </div>
               </div>
               <div className='ca-about_card_information'>
@@ -24,13 +28,13 @@ export class CaEventCard extends React.PureComponent<EventCardProps> {
                   {title}
                 </div>
                 <div className='ca-about_card_information_date'>
-                  <img src='../../assets/svg/icon-calendar--green.svg' />
+                  <img src={calendarGreen} alt='' />
                   <div className='ca-about_card_information_date-number'>
                     {begginingDate}
                   </div>
                 </div>
                 <div className='ca-about_card_information_city'>
-                  <img src='../../assets/svg/icon-location.svg' />
+                  <img src={location} alt='' />
                   <div className='ca-about_card_information_city-title'>
                     {city}
                   </div>
