@@ -5,46 +5,49 @@ import './EventCard.scss';
 import { EventCardProps } from './EventCard.model';
 import { NavLink } from 'react-router-dom';
 
+import bookmark from 'assets/svg/icon-bookmark--check.svg';
+import calendarGreen from 'assets/svg/icon-calendar--green.svg';
+import location from 'assets/svg/icon-location.svg';
+
 export class CaEventCard extends React.PureComponent<EventCardProps> {
   render() {
-    const { id, title, city, place, begginingInTime, begginingDate } = this.props;
+    const { id, title, city, begginingDate } = this.props;
     return (
-      <div className='ca-about_card'>
-        <div className='ca-about_card_img'>
-          <I18n>
-            {
-              t => (
-                <NavLink to={`/event/${id}`} >
-                  <button className='ca-about_card_img_btn'>{t('JOIN US')}</button>
-                </NavLink>
-              )
-            }
-          </I18n>
-        </div>
-        <div className='ca-about_card_information'>
-          <div className='ca-about_card_information_date'>
-            <div className='ca-about_card_information_date_month'>
-              {begginingDate}
-            </div>
-            <div className='ca-about_card_information_date_num'>
-              {begginingInTime}
-            </div>
-          </div>
-          <div className='ca-about_card_information_text'>
-            <div className='ca-about_card_information_text_title'>
-              {title}
-            </div>
-            <div className='ca-about_card_information_text_time-address'>
-              <div className='ca-about_card_information_text_time'>
-                {city}
+      <I18n>
+      {
+        t => (
+          <NavLink to={`/event/${id}`} >
+            <div className='card'>
+              <div className='img'>
+                <div className='img__bookmark'>
+                  <img src={bookmark} alt='' />
+                </div>
               </div>
-              <div className='ca-about_card_information_text_address'>
-                {place}
+              <div className='information'>
+                <div className='information__title'>
+                  {title}
+                </div>
+                <div className='date'>
+                  <img src={calendarGreen} alt='' />
+                  <div className='date__number'>
+                    {begginingDate}
+                  </div>
+                </div>
+                <div className='city'>
+                  <img src={location} alt='' />
+                  <div className='city__title'>
+                    {city}
+                  </div>
+                </div>
+                <div className='information__skills'>
+                  Java,C++,Ruby,Go
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </NavLink>
+        )
+      }
+      </I18n>
     );
   }
 }
