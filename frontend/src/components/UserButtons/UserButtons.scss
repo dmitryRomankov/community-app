@@ -1,0 +1,23 @@
+.user-buttons {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__login-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Source Sans Pro';
+    font-size: 1.6rem;
+    margin-right: 3.7rem;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__register-btn {
+    margin-right: 12rem;
+  }
+}

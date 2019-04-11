@@ -49,7 +49,6 @@ import {
 } from 'utils';
 
 import {
-  CaLogo,
   CaNavbar,
   CaSnackbar,
   LoginForm,
@@ -189,11 +188,6 @@ export class RootComponent extends React.Component<RootProps> {
               }
             ]}
           >
-
-            <CaLogo
-              text='Codding Dojo'
-              onClick={this.redToMainPage}
-            />
 
             {/* <div className='ca-navbar__select-language'>
               <CaSelect

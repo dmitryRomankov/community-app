@@ -9,15 +9,15 @@ import {
 
 export const MuiButton: Partial<StyleRules<ButtonClassKey>> = {
   root: {
-    width: '200px',
-    height: '34px',
-    border: '1px solid #f4b33a',
-    borderRadius: 0,
-    backgroundColor: 'transparent',
+    width: '136px',
+    height: '40px',
+    borderRadius: '20px',
+    backgroundColor: '#0084EA',
     color: defaultButtonTextColor,
     textTransform: 'none',
+    fontFamily: '"Source Sans Pro", serif',
     fontSize: '1.6rem',
-    fontWeight: 600,
+    fontWeight: 400,
 
     '&$disabled': {
       color: defaultButtonTextColor,
@@ -27,6 +27,7 @@ export const MuiButton: Partial<StyleRules<ButtonClassKey>> = {
   textPrimary: {
     color: primaryButtonTextColor,
     borderColor: primaryButtonTextColor,
+    backgroundColor: 'transparent',
 
     '&$disabled': {
       color: primaryButtonTextColor,
@@ -35,5 +36,5 @@ export const MuiButton: Partial<StyleRules<ButtonClassKey>> = {
   },
   containedSecondary: {
     color: secondaryButtonTextColor
-  }
+  },
 };

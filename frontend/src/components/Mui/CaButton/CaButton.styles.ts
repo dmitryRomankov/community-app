@@ -6,5 +6,5 @@ export const styles = ({breakpoints}: Theme) => createStyles({
     [breakpoints.down('xs')]: {
       display: 'block'
     }
-  }
+  },
 });

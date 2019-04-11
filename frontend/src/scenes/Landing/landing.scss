@@ -1,25 +1,36 @@
-.ca-landing {
+@import "../../style/settings.scss";
+
+
+.landing {
+  height: 100%;
   &__container {
-   background: url('./../../assets/dojo_pics/10_optimized.jpg');
+    height: 520px;
+    background: url('../../assets/dojo_pics/10_optimized.jpg');
+    background-position: left 63%;
+    font-weight: 500;
   }
 
-  // &__register-btn {
-  //   margin-right: 20px;
-  // }
+  &__title {
+    width: 435px;
+    height: 128px;
+    color: #fff;
+    padding: 10rem 0 0 12rem;
+  }
 
-  // &__title {
-  //   margin-top: 60px;
-  //   margin-bottom: 20px;
-  //   color: #fff;
-  //   font-size: 32px;
-  //   font-weight: 600;
-  //   text-align: center;
-  // }
+  &__title-text {
+    font-size: 56px;
+    line-height: 64px;
+  }
 
-  // &__buttons-container {
-  //   display: block;
-  //   text-align: center;
-  // }
+  &__title-description {
+    width: 350px;
+    height: 60px;
+    margin-top: 2.4rem;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    letter-spacing: normal;
+    line-height: 20px;
+  }
 }
 
 @media (max-width: 599.95px) {

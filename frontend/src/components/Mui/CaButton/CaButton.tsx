@@ -10,7 +10,7 @@ import { styles } from './CaButton.styles';
 
 const Styled = createStyled(styles);
 
-export const CaButton = ({ children, className, ...otherProps }: ButtonProps) => (
+export const CaButton = ({color, children, className, ...otherProps }: ButtonProps) => (
   <Styled>{({ classes }) => (
     <div className={classNames(classes.button, className)}>
       <Button {...otherProps}>

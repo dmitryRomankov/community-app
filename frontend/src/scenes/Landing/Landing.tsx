@@ -1,12 +1,17 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-// import { AuthStatus } from 'models';
+import { AuthStatus } from 'models';
 import { I18n } from 'react-i18next';
 import { AppState } from 'store';
+import { CaButton } from 'components';
 
 import { LandingProps } from './Landing.model';
 // import './landing.scss';
+
+const style = {
+  width: '152px'
+};
 
 class LandingComponent extends React.Component<LandingProps> {
   // public componentDidMount(): void {
@@ -28,9 +33,16 @@ class LandingComponent extends React.Component<LandingProps> {
       <I18n>
         {
           (t) => (
-            <div className='ca-landing'>
-              <div className='ca-landing__container'>
-               
+            <div className='landing'>
+              <div className='landing__container'>
+                <div className='landing__title'>
+                  <p className='landing__title-text'>{t('practiceandLearn')}</p>
+
+                  <p className='landing__title-description'>{t('challengeDescription')}</p>
+                  <CaButton style={style}>
+                    {t('startChallenge')}
+                  </CaButton>
+                </div>
               </div>
             </div>
           )
