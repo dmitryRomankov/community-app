@@ -18,7 +18,6 @@ import { EventsProps } from './Events.model';
 
 import './Events.scss';
 
-
 export class CaEventsPageComponent extends React.Component<EventsProps> {
   public componentWillMount(): void {
     const isAuthenticated = this.props.authStatus === AuthStatus.Authorized;

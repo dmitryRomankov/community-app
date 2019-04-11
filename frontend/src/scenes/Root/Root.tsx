@@ -173,17 +173,17 @@ export class RootComponent extends React.Component<RootProps> {
             linksToRender={[
               {
                 text: t('Events'),
-                to: '/events',
+                to: '/',
                 activeClassName: 'ca-navbar__nav-item--active',
               },
               {
                 text: t('Games'),
-                to: '/battles',
+                to: '/',
                 activeClassName: 'ca-navbar__nav-item--active',
               },
               {
                 text: t('Teams'),
-                to: '/teams',
+                to: '/',
                 activeClassName: 'ca-navbar__nav-item--active',
               }
             ]}
