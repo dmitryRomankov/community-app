@@ -1,0 +1,170 @@
+@import "../../style/settings.scss";
+
+.wrapper-control-panel {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0;
+  }
+  
+  .ca-control-panel {
+    display: flex;
+  
+    &__container {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    &__container > div { margin-right: 16px; }
+
+    &__container > div:last-child { margin-right: 0; }
+  
+    &__heading {
+      color: $color-white;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 19px;
+      margin-bottom: 8px;
+    }
+  
+    &__select-container {
+      height: 40px;
+      width: 200px;
+      padding: 0 13px;
+      border-radius: 4px;
+      background-color: $bg-gray;
+      box-sizing: border-box;
+    }
+  
+    &__select {
+      height: 100%;
+      width: 100%;
+      outline: none;
+      border-style: none;
+      color: $color-gray;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+      font-family: 'Source Sans Pro', sans-serif;
+      background: url('../../assets/svg/icon-path--down.svg');
+      background-repeat: no-repeat;
+      background-position: right center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      cursor: pointer;
+    }
+  
+    option {
+      background-color: $bg-gray;
+    }
+  
+    &__technology-input {
+      height: 40px;
+      width: 507px;
+      box-sizing: border-box;
+      padding: 0 13px;
+      border-radius: 4px;
+      background-color: $bg-gray;
+      color: $color-gray;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+      font-family: 'Source Sans Pro', sans-serif;
+      border: none;
+      outline: none;
+
+      &::placeholder {
+        color: $color-gray;
+      }
+    }
+  
+    &__pickers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    &__date-container {
+      height: 40px;
+      width: 136px;
+      padding: 11px 15px 11px 13px;
+      border-radius: 4px;
+      background-color: $bg-gray;
+      box-sizing: border-box;
+    }
+
+    &__separator {
+        width: 5px;
+        color: $color-gray;
+        margin: 0 5px;
+    }
+  
+    &__datepicker {
+      height: 100%;
+      width: 112px;
+      outline: none;
+      border-style: none;
+      color: $color-gray;
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 200;
+      font-family: 'Source Sans Pro', sans-serif;
+      background: url('../../assets/svg/icon-calendar.svg') no-repeat;
+      background-position: right center;
+      cursor: pointer;
+    }
+  
+    input[type=date]::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      cursor: pointer;
+    }
+  
+    input[type=date]::-webkit-inner-spin-button,
+    input[type=date]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+  
+    &__checkbox-container {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    &__checkbox-item {
+      color: $color-gray;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 14px;
+      line-height: 18px;
+      cursor: pointer;
+    }
+
+    &__checkbox-text {
+      cursor: pointer;
+    }
+  
+    &__checkbox-item:last-child {
+      margin-left: 16px;
+    }
+  
+    input[type=checkbox] { display: none; }
+    input[type=checkbox]:checked + label:before { color: $color-gray; }
+    input[type=checkbox] + label:before {
+      height: 24px;
+      width: 24px;
+      content: '\2713';
+      font-size: 18px;
+      cursor: pointer;
+      color: transparent;
+      display: inline-block;
+      border: 1px solid $color-gray;
+      background-color: $bg-gray-dark;
+      border-radius: 4px;
+      margin-right: 8px;
+      text-align: center;
+      box-sizing: border-box;
+      transition: color ease .2s;
+    }
+  }

@@ -1,5 +1,127 @@
-.ca-about {
+@import "../../style/settings.scss";
+
+.wrapper {
+    width: 100%;
+    font-family: "Source Sans Pro";
+}
+
+.event-head {
+    border-bottom: 1px solid $bg-blue-light;
+}
+
+.event-nav {
+    width: 1200px;
+    margin: auto;
+    //height: 88px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+
+    &__create-event-btn {
+        height: 40px;
+        width: 168px;
+        border: solid $bg-blue;
+        border-radius: 20px;
+        background-color: $bg-blue;
+        color: $color-white;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+        font-family: "Source Sans Pro";
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    padding-top: 51px;
+
+    &__current {
+        color: $color-blue;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        text-transform: uppercase;
+        border-bottom: 2px solid $bg-blue;
+        padding-bottom: 15px;
+        cursor: pointer;
+    }
+
+    &__archive {
+        margin-left: 32px;
+        color: $color-gray-dark;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        text-transform: uppercase;
+        padding-bottom: 15px;
+        cursor: pointer;
+    }
+}
+
+.main-wrapper {
+    width: 100%;
+    background-color: $bg-black-light;
+}
+
+.event-accordion {
+    width: 1200px;
+    margin: auto;
+    height: 405px;
+    padding-top: 32px;
+}
+
+.date-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+        color: $color-white;
+        font-size: 20px;
+        line-height: 25px;
+        padding-bottom: 16px;
+    }
+
+    &__arrow {
+        cursor: pointer;
+        margin-bottom: 17px;
+
+        &--margin {
+            margin-right: 8px;
+        }
+    }
+}
+
+.event-board {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px 4rem;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.event-list {
+    background-color: $bg-gray-dark;
+}
+
+.event-input {
+    width: 1200px;
+    margin: auto;
+}
+
+.all-event {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 45px;
+
+    & > a {
+        margin-bottom: 39px;
+    }
 }
