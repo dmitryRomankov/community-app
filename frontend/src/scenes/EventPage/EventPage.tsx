@@ -86,43 +86,6 @@ export class EventPageComp extends React.Component<EventProps> {
                             </div>
                           </div>
                         </div>
-                        {/* <div className='eventmain'>
-                          <div className='event__information__wrapper'>
-                            <div className='event__information'>
-                              <div className='event__information-city'>
-                                {event.city}
-                              </div>
-                              <div className='event__information-time'>
-                                <div>{t('startingIn')}:</div>
-                                <div>{event.begginingInTime}</div>
-                              </div>
-                              <div className='event__information-date'>
-                                <div>{t('eventDate')}:</div>
-                                <div>{event.begginingDate}</div>
-                              </div>
-                              <div className='event__information-place'>
-                                <div>{t('eventPlace')}:</div>
-                                <div>{`${event.place} ${event.address}`}</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className='event__description'>
-                            <p className='event__description__main-text'>{t('description')}</p>
-                            <p className='event__description__second-text'>{event.description}
-                            </p>
-                          </div>
-                          <div className='event__address-title'>
-                            <p className='event__address-title-text'>{t('eventPlace')}</p>
-                          </div>
-                          <div className='event__place'>
-                            <div className='event__place-address'>
-                              <p>{`${event.city}, ${event.place} ${event.address}`}</p>
-                            </div>
-                            <div className='event__place-map'>
-                              <YandexMap positionX={53.908087} positionY={30.308924} zoom={17} />
-                            </div>
-                          </div>
-                        </div> */}
                       </div>
                     );
                   }
