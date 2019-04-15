@@ -2,8 +2,7 @@
   &__container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
+    margin-left: 23.4rem;
   }
 
   &__login-btn {
@@ -15,9 +14,5 @@
     margin-right: 3.7rem;
     cursor: pointer;
     outline: none;
-  }
-
-  &__register-btn {
-    margin-right: 12rem;
   }
 }

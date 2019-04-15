@@ -44,22 +44,28 @@ import {
 } from 'store';
 
 import {
+  //getCurrentLanguage,
   getCurrentLanguageFromLocalStorage,
   setAuthToken
 } from 'utils';
 
 import {
+  AppMenu,
+  CaLogo,
   CaNavbar,
+  //CaSelect,
   CaSnackbar,
   LoginForm,
   ProtectedRoute,
   RegistrationForm,
+  CaButton,
 } from 'components';
 
 import {
   AppMenuItem,
   AuthStatus,
   ErrorBlock,
+  //Languages,
   transitionDirection,
 } from 'models';
 
@@ -98,6 +104,10 @@ export class RootComponent extends React.Component<RootProps> {
   public redToLogin = (): void => {
     this.props.logoutUser();
     this.props.history.push('/login');
+  }
+
+  public redToRegister = () => {
+    this.props.history.push('/register');
   }
 
   public redToMainPage = (): void => {
@@ -157,14 +167,14 @@ export class RootComponent extends React.Component<RootProps> {
 
   public getNavbar(authStatus: number): JSX.Element {
 
-    // const isAuthorized = authStatus === AuthStatus.Authorized;
+    const isAuthorized = authStatus === AuthStatus.Authorized;
     let appMenuItems: AppMenuItem[] = [];
 
     this.props.appMenuLinks.filter(item => {
       appMenuItems = this.generateAppMenuItems(item, appMenuItems);
     });
 
-    const { isSnackbarOpen, snackbarType, errors } = this.props;
+    const { user, isSnackbarOpen, snackbarType, errors } = this.props;
 
     return (
       <I18n>{
@@ -172,22 +182,64 @@ export class RootComponent extends React.Component<RootProps> {
           <CaNavbar
             linksToRender={[
               {
-                text: t('Events'),
-                to: '/',
-                activeClassName: 'ca-navbar__nav-item--active',
+                text: t('events'),
+                to: '/events',
+                activeClassName: 'ca-navbar__nav-item--active'
               },
               {
                 text: t('Games'),
-                to: '/',
-                activeClassName: 'ca-navbar__nav-item--active',
+                to: '/battles',
+                activeClassName: 'ca-navbar__nav-item--active'
               },
               {
                 text: t('Teams'),
-                to: '/',
-                activeClassName: 'ca-navbar__nav-item--active',
-              }
+                to: '/#',
+                activeClassName: 'ca-navbar__nav-item--active'
+              },
             ]}
           >
+            <div className='ca-navbar__menu-container'>
+              {
+                !isAuthorized ?
+                  <>
+                    <div className='user-buttons'>
+                      <div className='user-buttons__container'>
+                        <button
+                          className='user-buttons__login-btn'
+                          onClick={this.redToLogin}
+                          color='primary'
+                        >
+                          {t('login')}
+                        </button>
+                        <CaButton
+                          className='user-buttons__register-btn'
+                          onClick={this.redToRegister}
+                        >
+                          {t('register')}
+                        </CaButton>
+                      </div>
+                    </div>
+                  </>
+                  : null
+              }
+            </div>
+            <div className='ca-navbar__menu-container'>
+              {
+                isAuthorized ?
+                  <>
+                    <AppMenu appMenuItems={appMenuItems} imageUrl={user && user.imageUrl} >
+                      {this.getMenuProfilePanel()}
+                    </AppMenu>
+                    <div className='ca-navbar__profile-name'>{user && user.name}</div>
+                  </>
+                  : null
+              }
+            </div>
+
+            <CaLogo
+              text='coding dojo'
+              onClick={this.redToMainPage}
+            />
 
             {/* <div className='ca-navbar__select-language'>
               <CaSelect
@@ -219,7 +271,6 @@ export class RootComponent extends React.Component<RootProps> {
       </I18n>
     );
   }
-
   public render(): JSX.Element {
     const { status } = this.props;
     return (

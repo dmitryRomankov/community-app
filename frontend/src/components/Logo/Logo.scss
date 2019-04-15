@@ -1,12 +1,9 @@
 @import "../../style/settings.scss";
 
 .ca-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: $color-white;
-  margin-left: 12rem;
   font-size: $medium-font-2;
   text-transform: uppercase;
+  margin-right: 35rem;
   cursor: pointer;
 }

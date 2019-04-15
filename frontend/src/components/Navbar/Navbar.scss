@@ -2,31 +2,29 @@
 @import "../../style/_mixins.scss";
 
 .ca-navbar {
-
+  background-color: $bg-gray;
   &__container {
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    width: 100%;
     height: $nav-height;
-    color: $white;
+    color: $color-white;
     font-size: 1.8rem;
-    background-color: $bg-gray;
+    width: 1440px;
+    margin: 0 auto;
   }
 
   &__items-container {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: center;
     align-items: center;
-    height: 100%;
+    width: 100%;
+    padding: 0 120px;
   }
 
   &__nav-item {
     @include resetLink($unactive-link-color);
     margin: 0 2.3rem;
     font-size: 1.6rem;
-    color: #fff;
+    color: $color-white;
     cursor: pointer;
     transition: all .3s;
   }
@@ -35,23 +33,17 @@
     color: $white;
   }
 
-  &__menu-container {
-    margin-left: auto;
-    margin-right: 4rem;
-    display: flex;
-  }
-
-  &__select-language {
-    width: 80px;
-    margin-left: 20px;
-  }
+//   &__select-language {
+//     width: 80px;
+//     margin-left: 20px;
+//   }
 
   &__profile-name {
     display: flex;
     align-items: center;
   }
 
-  .user-buttons {
+  &__menu-container {
     order: 1;
   }
 }
@@ -77,7 +69,7 @@
 
     &__menu-container {
       margin-left: 0;
-      }
+    }
 
     &__select-language {
       width: 65px;
