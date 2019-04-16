@@ -198,10 +198,10 @@ export class RootComponent extends React.Component<RootProps> {
               },
             ]}
           >
-            <div className='ca-navbar__menu-container'>
+          
               {
                 !isAuthorized ?
-                  <>
+                  <div className='ca-navbar__menu-login'>
                     <div className='user-buttons'>
                       <div className='user-buttons__container'>
                         <button
@@ -219,22 +219,20 @@ export class RootComponent extends React.Component<RootProps> {
                         </CaButton>
                       </div>
                     </div>
-                  </>
+                  </div>
                   : null
               }
-            </div>
-            <div className='ca-navbar__menu-container'>
+
               {
                 isAuthorized ?
-                  <>
+                  <div className='ca-navbar__menu-container'>
+                    <div className='ca-navbar__profile-name'>{user && user.name}</div>
                     <AppMenu appMenuItems={appMenuItems} imageUrl={user && user.imageUrl} >
                       {this.getMenuProfilePanel()}
                     </AppMenu>
-                    <div className='ca-navbar__profile-name'>{user && user.name}</div>
-                  </>
+                  </div>
                   : null
               }
-            </div>
 
             <CaLogo
               text='coding dojo'
