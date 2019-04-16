@@ -1,106 +1,105 @@
 @import "../../style/settings.scss";
 
-.event {
-    margin: 0 12%;
-    background-color: $nav-color;
+.page {
+  width: 100%;
+  background-color: $bg-gray-dark;
+}
 
-    &__header {
-        padding: 100px 0;
-        background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ),
-         url(https://generocity.org/philly/wp-content/uploads/sites/2/2015/10/GenerocityMeetup1.jpg);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: 100% 50%;
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 1440px;
+  height: 320px;
+  margin: auto;
+  background: linear-gradient(90deg, rgba(27,30,38,0.82) 0%, rgba(13,13,13,0) 100%) ,
+  url(https://generocity.org/philly/wp-content/uploads/sites/2/2015/10/GenerocityMeetup1.jpg);
+  
+  &__title {
+    margin-left: 120px;
+    width: 652px;
+    color: $color-white;
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 64px;
+    padding-top: 59px;
+    flex-grow: 1;
+  }
+}
 
-        &__title {
-            color: $orange;
-            font-weight: 500;
-            font-size: $big-font-2;
-            text-align: center;
-        }
-    }
+.event-information {
+  width: 100%;
+  height: 73px;
+  margin-bottom: 0px;
+  background-color: rgba(0,0,0,0.49);
+}
 
-    &__information__wrapper {
-        width: 100%;
-        font-size: $medium-font-2;
-        border-top: 2px solid $background-color;
-        border-bottom: 2px solid $background-color;
-    }
+.information-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1200px;
+  margin: auto;
+}
 
-    &__information {
-        width: 75%;
-        height: 15%;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        color: $grey-light;
-        padding: 2% 0;
+.information__share {
+  cursor: pointer;
+}
 
-        &-place:last-child {
-            border: none;
-            width: 40%
-        }
-    }
+.widget {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-    &__description {
-        width: 80%;
-        margin: 0 auto;
-        padding-top: 20px;
+  &__online {
+      margin-right: 32px;
+  }
+  
+  &__date {
+    display: flex;
+    align-items: center;
+  }
 
-        &__main-text {
-            color: $orange;
-            font-size: $big-font-2;
-            text-align: center;
-            padding-bottom: 20px;
-        }
+  &__city {
+    display: flex;
+    align-items: center;
+  }
 
-        &__second-text {
-            color: $grey-light;
-            font-size: $big-font;
-            font-weight: 300;
-        }
-    }
+  &__skills {
+    color: $bg-blue;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 25px;
+  }
+}
 
-    &__address-title-text {
-        padding: 20px;
-        border-bottom: 2px solid $background-color;
-        font-size: $big-font;
-        color: $orange;
-        text-align: center;
-        margin: 30px 10% 20px;
-    }
+.number {
+  color: $color-green;
+  display: inline-block;
+  padding-left: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  margin-right: 32px;
+}
 
-    &__place {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 80%;
-        height: 320px;
-        margin: 0 auto;
-
-        &-address {
-            font-size: $big-font;
-            text-align: center;
-            color: $orange;
-        }
-
-        &-map {
-            width: 300px;
-            height: 300px;
-            border: 2px solid $orange;
-        }
-    }
+.title-city {
+  display: inline-block;
+  padding-left: 8px;
+  color: $color-white;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 25px;
+  margin-right: 32px;
 }
 
 .event__information > div{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border-right: 2px solid $background-color;
-    height: 80px;
-    width: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-right: 2px solid $background-color;
+  height: 80px;
+  width: 30%;
 }
+
