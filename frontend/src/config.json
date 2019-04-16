@@ -20,6 +20,7 @@
         "host": "localhost",
         "user": "root",
         "password": "password",
-        "dialect": "mysql"
+        "dialect": "mysql",
+	"database": "mysql"
     }
 }
