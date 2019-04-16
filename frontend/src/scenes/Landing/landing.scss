@@ -1,28 +1,144 @@
-.ca-landing {
-  &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
+@import "../../style/settings.scss";
 
-  &__register-btn {
-    margin-right: 20px;
+
+.landing {
+  height: 100%;
+  width: 1440px;
+  margin: auto;
+  &__container {
+    height: 520px;
+    background: url('../../assets/dojo_pics/10_optimized.jpg');
+    background-position: left 63%;
+    font-weight: 500;
   }
 
   &__title {
-    margin-top: 60px;
-    margin-bottom: 20px;
+    width: 435px;
+    height: 128px;
     color: #fff;
-    font-size: 32px;
-    font-weight: 600;
+    padding: 10rem 0 0 12rem;
+  }
+
+  &__title-text {
+    font-size: 56px;
+    line-height: 64px;
+  }
+
+  &__title-description {
+    width: 350px;
+    height: 60px;
+    margin-top: 2.4rem;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    letter-spacing: normal;
+    line-height: 20px;
+  }
+
+  &__event-section {
+    background-color: #252934;
+  }
+
+  &__event-description {
+    color: #fff;
+  }
+
+  &__practice-event {
+    margin: 0 auto;
+    padding: 56px 0 24px 0;
+    width: 306px;
+    height: 30px;
+    font-size: 2.4rem;
+    text-transform: uppercase;
+  }
+
+  &__event-motivation {
+    margin: 0 auto;
+    width: 480px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: lighter;
+    line-height: 20px;
+    letter-spacing: normal;
+  }
+
+  &__event-motivation--center {
+    display: inline-block;
     text-align: center;
   }
 
-  &__buttons-container {
-    display: block;
-    text-align: center;
+  &__event-card-section {
+    margin: 40px auto 0;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__event-btn {
+    width: 200px;
+    margin: 40px auto;
+  }
+
+  &-banner {
+    &__heading {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 64px;
+      color: $color-white;
+    }
+  
+    &__event-banner {
+      height: 52rem;
+      padding: 0 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      background: url(../../assets/dojo_pics/background1.jpg) 100% 100% no-repeat;
+      background-size: cover;
+    }
+  
+    &__event-heading-container {
+      height: 128px;
+      width: 551px;
+      text-align: right;
+    }
+  
+    &__description-container {
+      width: 397px;
+      height: 20px;
+      margin: 24px 0;
+      text-align: right;
+    }
+  
+    &__description {
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+      color: $color-white;
+    }
+  
+    &__programming-banner {
+      padding: 140px 191px 127px 191px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: url(../../assets/dojo_pics/background2.jpg) 100% 100% no-repeat;
+      background-size: cover;
+    }
+  
+    &__programming-heading-container {
+      height: 128px;
+      width: 601px;
+      text-align: center;
+    }
+  
+    &__icons-container {
+      margin-top: 55px;
+      width: 1059px;
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 

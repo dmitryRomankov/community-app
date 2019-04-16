@@ -1,5 +1,5 @@
 // button colors
-export const defaultButtonTextColor = '#f4b33a';
+export const defaultButtonTextColor = '#FFFFFF';
 export const primaryButtonTextColor = '#000';
 export const secondaryButtonTextColor = '#fff';
 

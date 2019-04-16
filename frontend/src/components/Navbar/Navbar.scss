@@ -2,33 +2,30 @@
 @import "../../style/_mixins.scss";
 
 .ca-navbar {
-
-  height: $nav-height;
-
+  background-color: $bg-gray;
   &__container {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    color: $white;
-    z-index: 101;
-    font-size: 1.8rem;
     display: flex;
-    height: inherit;
-    background-color: $nav-color;
+    height: $nav-height;
+    color: $color-white;
+    font-size: 1.8rem;
+    width: 1440px;
+    margin: 0 auto;
   }
 
   &__items-container {
     display: flex;
-    height: 100%;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    margin-left: 3rem;
-    @include flexbox-center-all();
+    padding: 0 120px;
   }
 
   &__nav-item {
     @include resetLink($unactive-link-color);
-    position: relative;
-    margin: 1.5rem;
+    margin: 0 2.3rem;
+    font-size: 1.6rem;
+    color: $color-white;
     cursor: pointer;
     transition: all .3s;
   }
@@ -37,23 +34,28 @@
     color: $white;
   }
 
-  &__menu-container {
-    order: 1;
-    margin-left: auto;
-    margin-right: 4rem;
-    display: flex;
-  }
-
-  &__select-language {
-    width: 80px;
-    margin-left: 20px;
-  }
+//   &__select-language {
+//     width: 80px;
+//     margin-left: 20px;
+//   }
 
   &__profile-name {
     display: flex;
     align-items: center;
   }
+
+  &__menu-login {
+    order: 1;
+  }
+
+  &__menu-container {
+    order: 1;
+    display: flex;
+    flex-direction: row;
+  }
 }
+
+
 @media(max-width: 800px) {
   .ca-navbar {
     &__nav-item:last-child {
@@ -74,7 +76,7 @@
 
     &__menu-container {
       margin-left: 0;
-      }
+    }
 
     &__select-language {
       width: 65px;

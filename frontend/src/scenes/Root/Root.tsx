@@ -44,7 +44,7 @@ import {
 } from 'store';
 
 import {
-  getCurrentLanguage,
+  //getCurrentLanguage,
   getCurrentLanguageFromLocalStorage,
   setAuthToken
 } from 'utils';
@@ -53,18 +53,19 @@ import {
   AppMenu,
   CaLogo,
   CaNavbar,
-  CaSelect,
+  //CaSelect,
   CaSnackbar,
   LoginForm,
   ProtectedRoute,
   RegistrationForm,
+  CaButton,
 } from 'components';
 
 import {
   AppMenuItem,
   AuthStatus,
   ErrorBlock,
-  Languages,
+  //Languages,
   transitionDirection,
 } from 'models';
 
@@ -103,6 +104,10 @@ export class RootComponent extends React.Component<RootProps> {
   public redToLogin = (): void => {
     this.props.logoutUser();
     this.props.history.push('/login');
+  }
+
+  public redToRegister = () => {
+    this.props.history.push('/register');
   }
 
   public redToMainPage = (): void => {
@@ -177,57 +182,71 @@ export class RootComponent extends React.Component<RootProps> {
           <CaNavbar
             linksToRender={[
               {
-                text: t('battles'),
-                to: '/battles',
-                activeClassName: 'ca-navbar__nav-item--active',
-                disabled: !isAuthorized
-              },
-              {
-                text: t('statistics'),
-                to: '/statistics',
-                activeClassName: 'ca-navbar__nav-item--active',
-                disabled: !isAuthorized
-              },
-              {
                 text: t('events'),
                 to: '/events',
-                activeClassName: 'ca-navbar__nav-item--active',
-                disabled: !isAuthorized
+                activeClassName: 'ca-navbar__nav-item--active'
               },
               {
-                text: t('about'),
-                to: '/about',
-                activeClassName: 'ca-navbar__nav-item--active',
-                disabled: !isAuthorized
-              }
+                text: t('Games'),
+                to: '/battles',
+                activeClassName: 'ca-navbar__nav-item--active'
+              },
+              {
+                text: t('Teams'),
+                to: '/#',
+                activeClassName: 'ca-navbar__nav-item--active'
+              },
             ]}
           >
-            <div className='ca-navbar__menu-container'>
+          
+              {
+                !isAuthorized ?
+                  <div className='ca-navbar__menu-login'>
+                    <div className='user-buttons'>
+                      <div className='user-buttons__container'>
+                        <button
+                          className='user-buttons__login-btn'
+                          onClick={this.redToLogin}
+                          color='primary'
+                        >
+                          {t('login')}
+                        </button>
+                        <CaButton
+                          className='user-buttons__register-btn'
+                          onClick={this.redToRegister}
+                        >
+                          {t('register')}
+                        </CaButton>
+                      </div>
+                    </div>
+                  </div>
+                  : null
+              }
+
               {
                 isAuthorized ?
-                  <>
+                  <div className='ca-navbar__menu-container'>
+                    <div className='ca-navbar__profile-name'>{user && user.name}</div>
                     <AppMenu appMenuItems={appMenuItems} imageUrl={user && user.imageUrl} >
                       {this.getMenuProfilePanel()}
                     </AppMenu>
-                    <div className='ca-navbar__profile-name'>{user && user.name}</div>
-                  </>
+                  </div>
                   : null
               }
-            </div>
 
             <CaLogo
-              text='battlenet'
+              text='coding dojo'
               onClick={this.redToMainPage}
             />
 
-            <div className='ca-navbar__select-language'>
+            {/* <div className='ca-navbar__select-language'>
               <CaSelect
                 values={[Languages.En, Languages.Ru]}
                 displayedValues={[t('ENToggle'), t('RUToggle')]}
                 handleChange={this.handleChange}
                 currentValue={getCurrentLanguage(i18n)}
               />
-            </div>
+            </div> */}
 
             <CaSnackbar
               anchorOrigin={{ vertical: 'top', horizontal: 'center' }}

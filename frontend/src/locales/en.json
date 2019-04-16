@@ -2,7 +2,7 @@
   "language": "Language",
   "ENToggle": "en",
   "RUToggle": "ru",
-  "login": "Login",
+  "login": "Log in",
   "logout": "Logout",
   "register": "Register",
   "loginWithSocialNetwork": "Or sign in with a social network",
@@ -98,5 +98,8 @@
   "topTen": "Top 10",
   "vkEmailWarningForAuth": "Please enter your contact e-mail",
   "waitingForRedirect": "Waiting for redirect",
-  "weekReport": "Week report"
+  "weekReport": "Week report",
+  "practiceandLearn": "Practice & learn the fun way",
+  "startChallenge": "Start Challenge",
+  "challengeDescription": "Learn new concepts by solving fun challenges in 25+ language addressing all the hot programming topics"
 }

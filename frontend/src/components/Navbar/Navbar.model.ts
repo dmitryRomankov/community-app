@@ -7,5 +7,4 @@ export interface Link {
   text?: string;
   to: string;
   activeClassName?: string;
-  disabled: boolean;
 }

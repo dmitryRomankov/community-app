@@ -11,10 +11,10 @@ export const CaNavbar = (props: NavbarProps) => {
       <div className='ca-navbar__container'>
         <ul className='ca-navbar__items-container'>
           {props.children}
+          <div>
           {props.linksToRender &&
             props.linksToRender.map((link: Link, index: number) => {
               return (
-                !link.disabled &&
                 <NavLink
                   key={index}
                   to={link.to}
@@ -25,6 +25,7 @@ export const CaNavbar = (props: NavbarProps) => {
                 </NavLink>
               );
             })}
+            </div>
         </ul>
       </div>
     </div>

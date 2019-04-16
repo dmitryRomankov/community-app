@@ -1,0 +1,18 @@
+.user-buttons {
+  &__container {
+    display: flex;
+    align-items: center;
+    margin-left: 23.4rem;
+  }
+
+  &__login-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Source Sans Pro';
+    font-size: 1.6rem;
+    margin-right: 3.7rem;
+    cursor: pointer;
+    outline: none;
+  }
+}
