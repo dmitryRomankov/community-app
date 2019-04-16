@@ -17,7 +17,7 @@ export const dbConfig = {
         userRole: 'admin'
     },
     dialect: configFile.dbConfig.dialect,
-    database: 'community-app',
+    database: configFile.dbConfig.database,
     usersModel: 'users',
     usersTable: 'users',
     rolesModel: 'roles',
