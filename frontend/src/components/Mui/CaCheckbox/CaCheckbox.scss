@@ -1,0 +1,38 @@
+@import "../../../style/settings.scss";
+
+.ca-checkbox {
+  label {
+    margin: 0;
+    height: 40px;
+    width: 72.97px;
+    display: flex;
+    justify-content: space-between;
+
+    span:first-child {
+      height: 28px;
+      width: 28px;
+      border-radius: 4px;
+
+      svg {
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    span:last-child {
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 14px;
+      color: $color-gray;
+    }
+  }
+}
+
+.checked {
+  svg { path:last-child { color: $color-green; } }
+  span:first-child { background: white; }
+}
+
+.unchecked { 
+  svg { path:first-child { opacity: 0; } }
+  span:last-child { border: 1px solid $color-gray; }
+}
