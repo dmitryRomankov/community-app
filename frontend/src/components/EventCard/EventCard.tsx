@@ -4,6 +4,7 @@ import { I18n } from 'react-i18next';
 import './EventCard.scss';
 import { EventCardProps } from './EventCard.model';
 import { NavLink } from 'react-router-dom';
+import { changeCommaColor } from '../../utils/changeCommaColor';
 
 import bookmark from 'assets/svg/icon-bookmark--check.svg';
 import calendarGreen from 'assets/svg/icon-calendar--green.svg';
@@ -13,6 +14,7 @@ import online from 'assets/svg/icon-online.svg';
 export class CaEventCard extends React.PureComponent<EventCardProps> {
   render() {
     const { id, title, city, begginingDate } = this.props;
+    const str = 'Java, C++, Ruby, Go';
 
     return (
       <I18n>
@@ -43,7 +45,7 @@ export class CaEventCard extends React.PureComponent<EventCardProps> {
                     </div>
                   </div>
                   <div className='information__skills'>
-                    Java, C++, Ruby, Go
+                    { changeCommaColor(str) }
                   </div>
                 </div>
               </div>
