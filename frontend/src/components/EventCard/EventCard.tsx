@@ -15,6 +15,7 @@ export class CaEventCard extends React.PureComponent<EventCardProps> {
   render() {
     const { id, title, city, begginingDate } = this.props;
     const str = 'Java, C++, Ruby, Go';
+    const skills = changeCommaColor(str);
 
     return (
       <I18n>
@@ -45,7 +46,7 @@ export class CaEventCard extends React.PureComponent<EventCardProps> {
                     </div>
                   </div>
                   <div className='information__skills'>
-                    { changeCommaColor(str) }
+                    {skills}
                   </div>
                 </div>
               </div>
