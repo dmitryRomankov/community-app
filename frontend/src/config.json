@@ -21,6 +21,6 @@
         "user": "root",
         "password": "password",
         "dialect": "mysql",
-	"database": "mysql"
+	"database": "community-app"
     }
 }
