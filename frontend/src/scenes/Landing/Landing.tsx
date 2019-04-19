@@ -18,7 +18,8 @@ import pythonSvg from 'assets/svg/python-icon.svg';
 import rubySvg from 'assets/svg/ruby-icon.svg';
 
 const landingButtonStyle = {
-  width: '152px'
+  width: 'max-content',
+  minWidth: '152px',
 };
 
 const eventButton = {
