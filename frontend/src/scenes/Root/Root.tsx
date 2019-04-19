@@ -193,7 +193,7 @@ export class RootComponent extends React.Component<RootProps> {
               },
               {
                 text: t('Teams'),
-                to: '/#',
+                to: '/teams',
                 activeClassName: 'ca-navbar__nav-item--active'
               },
             ]}
