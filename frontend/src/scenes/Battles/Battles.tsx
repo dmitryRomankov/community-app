@@ -12,7 +12,6 @@ import {
 import {
   CaGameCard,
   CaSpinner,
-  GithubButton
 } from 'components';
 import { isEmpty } from 'utils';
 
@@ -75,8 +74,6 @@ class CaBattlesComponent extends React.Component<BattleProps> {
     return (
       <div className='ca-homepage'>
         {children}
-        <GithubButton url='https://github.com/js-machine/community-app' />
-
         {!isEmpty(games) && (
           <div className='ca-homepage__container ca-global-fadeIn'>
             {games.map((game: GameModel, index: number) => {
