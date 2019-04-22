@@ -1,24 +1,24 @@
 @import '../../../style/settings.scss';
 
 .container {
-  height: 40px;
-  width: 136px;
-  padding: 11px 15px 11px 13px;
-  border-radius: 4px;
+  height: 4rem;
+  width: 13.6rem;
+  padding: 1.1rem 1.5rem 1.1rem 1.3rem;
+  border-radius: 0.4rem;
   background-color: $bg-gray;
   box-sizing: border-box;
 }
 
 .ca-datePicker {
   height: 100%;
-  width: 112px;
+  width: 11.2rem;
   background: url('../../../assets/svg/icon-calendar.svg') no-repeat;
   background-position: right center;
 
   input {
     padding: 0;
     color: $color-gray;
-    font-size: 14px;
+    font-size: 1.4rem;
     text-transform: uppercase;
     font-weight: 200;
     font-family: 'Source Sans Pro', sans-serif;
