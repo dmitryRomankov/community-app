@@ -5,6 +5,7 @@
   height: 100%;
   width: 144rem;
   margin: auto;
+
   &__container {
     height: 52rem;
     background: url('../../assets/dojo_pics/10_optimized.jpg');
@@ -79,10 +80,6 @@
     margin: 4rem auto;
   }
 
-  &-banner:last-child {
-    margin-top: 10rem;
-  }
-
   &-banner {
     height: 52rem;
 
@@ -126,6 +123,7 @@
     }
 
     &__programming-banner {
+      margin-top: 10rem;
       padding: 14rem 19.1rem 12.7rem 19.1rem;
       display: flex;
       flex-direction: column;
