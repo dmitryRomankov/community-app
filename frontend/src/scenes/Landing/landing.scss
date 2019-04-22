@@ -79,7 +79,13 @@
     margin: 4rem auto;
   }
 
+  &-banner:last-child {
+    margin-top: 10rem;
+  }
+
   &-banner {
+    height: 52rem;
+
     &__heading {
       font-family: 'Source Sans Pro', sans-serif;
       font-size: 5.6rem;
@@ -89,13 +95,14 @@
     }
 
     &__event-banner {
-      height: 52rem;
+      height: 100%;
       padding: 9.8rem 12rem 0 12rem;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
       background: url(../../assets/dojo_pics/background1.jpg) 100% 100% no-repeat;
       background-size: cover;
+      box-sizing: border-box;
     }
 
     &__event-heading-container {
