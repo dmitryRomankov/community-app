@@ -104,13 +104,13 @@
     justify-content: space-between;
 }
 
-.event-board > a:nth-child(2) > .card {
+.event-board > a:nth-child(2) > .event-card {
     height: 315px;
     width: 584px;
     display: flex;
     border-radius: 6px;
 
-    .img {
+    .event-card__img {
         background-repeat: no-repeat;
         background-size: 100% 100%;
         border-radius: 6px 0 0 6px;
