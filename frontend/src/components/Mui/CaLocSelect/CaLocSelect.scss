@@ -1,0 +1,29 @@
+@import '../../../style/settings.scss';
+
+.ca-select {
+  height: 4rem;
+  width: 20rem;
+  padding: 0 1.3rem;
+  border-radius: 0.4rem;
+  background-color: $bg-gray;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ca-select > div {
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  font-weight: 300;
+  font-family: "Source Sans Pro", sans-serif;
+  color: $color-gray;
+}
+
+.ca-select > div > svg {
+  background: url('../../../assets/svg/icon-path--down.svg') no-repeat;
+  background-position: right center;
+}
+
+.ca-select > div > svg > path { display: none; }
+.ca-select > div > div { padding: 0; }

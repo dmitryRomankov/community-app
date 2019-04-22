@@ -10,3 +10,7 @@ export * from './CaDialogInfo';
 export * from './CaCopy';
 export * from './CaTabs';
 export * from './CaTab';
+export * from './CaCheckbox';
+export * from './CaDatePicker';
+export * from './CaLocSelect';
+export * from './CaInput';
