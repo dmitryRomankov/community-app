@@ -110,6 +110,9 @@ class LandingComponent extends React.Component<LandingProps> {
                         We will show you that it is very simple
                      </p>
                     </div>
+                    <CaButton style={landingButtonStyle}>
+                      {t('Watch a tutorial')}
+                    </CaButton>
                   </div>
                 </section>
 
