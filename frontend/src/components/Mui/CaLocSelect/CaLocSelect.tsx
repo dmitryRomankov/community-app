@@ -29,8 +29,13 @@ export class CaLocSelect extends React.Component<CaLocSelectProps> {
           />
         }
       >
-        {values.map(
-          (locations, index) => <MenuItem className='test' key={locations} value={values[index]}>{locations}</MenuItem>
+        {values.map((locations, index) =>
+          <MenuItem
+            className='test'
+            key={locations}
+            value={values[index]}>
+              {locations}
+          </MenuItem>
         )}
       </Select>
     );
