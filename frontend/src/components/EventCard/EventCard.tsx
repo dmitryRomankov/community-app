@@ -22,30 +22,30 @@ export class CaEventCard extends React.PureComponent<EventCardProps> {
         {
           t => (
             <NavLink to={`/event/${id}`} >
-              <div className='card'>
-                <div className='img'>
-                  <img src={online} alt='' className='img__online' />
-                  <div className='img__bookmark'>
+              <div className='event-card'>
+                <div className='event-card__img'>
+                  <img src={online} alt='' className='event-card__online-status' />
+                  <div className='event-card__bookmark-icon'>
                     <img src={bookmark} alt='' />
                   </div>
                 </div>
-                <div className='information'>
-                  <div className='information__title'>
+                <div className='event-card__info'>
+                  <div className='event-card__title'>
                     {title}
                   </div>
-                  <div className='date'>
+                  <div className='event-card__date-info'>
                     <img src={calendarGreen} alt='' />
-                    <div className='date__number'>
+                    <div className='event-card__date'>
                       {begginingDate}
                     </div>
                   </div>
-                  <div className='city'>
+                  <div className='event-card__location-info'>
                     <img src={location} alt='' />
-                    <div className='city__title'>
+                    <div className='event-card__location'>
                       {city}
                     </div>
                   </div>
-                  <div className='information__skills'>
+                  <div className='event-card__skills'>
                     {skills}
                   </div>
                 </div>
