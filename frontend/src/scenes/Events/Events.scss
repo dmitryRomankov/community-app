@@ -6,11 +6,11 @@
 }
 
 .event-head {
-    border-bottom: 1px solid $bg-blue-light;
+    border-bottom: 0.1rem solid $bg-blue-light;
 }
 
 .event-nav {
-    width: 1200px;
+    width: 120rem;
     margin: auto;
     //height: 88px;
     display: flex;
@@ -19,15 +19,15 @@
     align-items: center;
 
     &__create-event-btn {
-        height: 40px;
-        width: 168px;
+        height: 4rem;
+        width: 16.8rem;
         border: solid $bg-blue;
-        border-radius: 20px;
+        border-radius: 2rem;
         background-color: $bg-blue;
         color: $color-white;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 400;
-        line-height: 20px;
+        line-height: 2rem;
         text-align: center;
         font-family: "Source Sans Pro";
         outline: none;
@@ -38,27 +38,27 @@
 .nav {
     display: flex;
     flex-direction: row;
-    padding-top: 51px;
+    padding-top: 5.1rem;
 
     &__current {
         color: $color-blue;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 500;
-        line-height: 20px;
+        line-height: 2rem;
         text-transform: uppercase;
-        border-bottom: 2px solid $bg-blue;
-        padding-bottom: 15px;
+        border-bottom: 0.2rem solid $bg-blue;
+        padding-bottom: 1.5rem;
         cursor: pointer;
     }
 
     &__archive {
-        margin-left: 32px;
+        margin-left: 3.2rem;
         color: $color-gray-2;
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 500;
-        line-height: 20px;
+        line-height: 2rem;
         text-transform: uppercase;
-        padding-bottom: 15px;
+        padding-bottom: 1.5rem;
         cursor: pointer;
     }
 }
@@ -69,10 +69,10 @@
 }
 
 .event-accordion {
-    width: 1200px;
+    width: 120rem;
     margin: auto;
-    height: 405px;
-    padding-top: 32px;
+    height: 40.5rem;
+    padding-top: 3.2rem;
 }
 
 .date-nav {
@@ -82,17 +82,17 @@
 
     &__title {
         color: $color-white;
-        font-size: 20px;
-        line-height: 25px;
-        padding-bottom: 16px;
+        font-size: 2rem;
+        line-height: 2.5rem;
+        padding-bottom: 1.6rem;
     }
 
     &__arrow {
         cursor: pointer;
-        margin-bottom: 17px;
+        margin-bottom: 1.7rem;
 
         &--margin {
-            margin-right: 8px;
+            margin-right: 0.8rem;
         }
     }
 }
@@ -105,17 +105,17 @@
 }
 
 .event-board > a:nth-child(2) > .event-card {
-    height: 315px;
-    width: 584px;
+    height: 31.5rem;
+    width: 58.4rem;
     display: flex;
-    border-radius: 6px;
+    border-radius: 0.6rem;
 
     .event-card__img {
         background-repeat: no-repeat;
         background-size: 100% 100%;
-        border-radius: 6px 0 0 6px;
+        border-radius: 0.6rem 0 0 0.6rem;
         height: 100%;
-        width: 380px;
+        width: 38rem;
     }
 }
 
@@ -124,19 +124,19 @@
 }
 
 .event-input {
-    width: 1200px;
+    width: 120rem;
     margin: auto;
 }
 
 .all-event {
-    width: 1200px;
+    width: 120rem;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-bottom: 45px;
+    padding-bottom: 4.5rem;
 
     & > a {
-        margin-bottom: 39px;
+        margin-bottom: 3.9rem;
     }
 }
