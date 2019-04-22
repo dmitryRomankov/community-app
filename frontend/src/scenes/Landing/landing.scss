@@ -74,7 +74,8 @@
   }
 
   &__event-btn {
-    width: 200px;
+    width: min-content;
+    min-width: 152px;
     margin: 40px auto;
   }
 
