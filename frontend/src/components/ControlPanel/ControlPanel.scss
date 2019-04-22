@@ -2,18 +2,18 @@
 
 .ca-control-panel {
   display: flex;
-  padding: 32px 0;
+  padding: 3.2rem 0;
 
   &__heading {
     color: $color-white;
-    font-size: 15px;
+    font-size: 1.5rem;
     font-weight: 400;
-    line-height: 19px;
-    margin-bottom: 8px;
+    line-height: 1.9rem;
+    margin-bottom: 0.8rem;
   }
 
   &__pickers {
-    width: 287px;
+    width: 28.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,14 +21,14 @@
   }
 
   &__separator {
-    width: 5px;
+    width: 0.5rem;
     color: $color-gray;
-    margin: 0 5px;
+    margin: 0 0.5rem;
   }
 
   &__checkbox-container {
-    width: 160.94px;
-    height: 40px;
+    width: 16rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,8 +37,8 @@
 }
 
 .test {
-  color: white;
+  color: $color-white;
 }
 
-.ca-control-panel > div { margin-right: 16px; }
+.ca-control-panel > div { margin-right: 1.6rem; }
 .ca-control-panel div:last-child { margin-right: 0; }
