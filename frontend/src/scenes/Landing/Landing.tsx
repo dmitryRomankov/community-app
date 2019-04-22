@@ -1,10 +1,13 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 
 // import { AuthStatus } from 'models';
 import { I18n } from 'react-i18next';
 import { AppState } from 'store';
 import { CaButton, CaEventCard } from 'components';
+
+import { LoadEvents } from 'store/events';
 
 import { LandingProps } from './Landing.model';
 import './landing.scss';
@@ -29,11 +32,13 @@ const eventButton = {
 };
 
 class LandingComponent extends React.Component<LandingProps> {
-  // public componentDidMount(): void {
-  //   if (this.props.status === AuthStatus.Authorized) {
-  //     this.props.history.push('/homepage');
-  //   }
-  // }
+  public componentDidMount(): void {
+    this.props.loadEvents();
+
+    // if (this.props.status === AuthStatus.Authorized) {
+    //   this.props.history.push('/homepage');
+    // }
+  }
 
   public redToLogin = () => {
     this.props.history.push('/login');
@@ -44,6 +49,7 @@ class LandingComponent extends React.Component<LandingProps> {
   }
 
   public render(): JSX.Element {
+    const { events } = this.props;
     return (
       <I18n>
         {
@@ -70,14 +76,19 @@ class LandingComponent extends React.Component<LandingProps> {
                 </div>
 
                 <div className='landing__event-card-section'>
-                  <CaEventCard
-                    id={1}
-                    title='First event'
-                    city='Mogilev'
-                    place='Nebo'
-                    begginingInTime='12:00'
-                    begginingDate='11/22/33'
-                  />
+                  {events.slice(0, 4).map(event => {
+                    return (
+                      <CaEventCard
+                        key={event.id}
+                        id={Number(event.id)}
+                        title={event.title}
+                        city={event.city}
+                        place={event.place}
+                        begginingInTime={event.begginingInTime}
+                        begginingDate={event.begginingDate}
+                      />
+                    )
+                  })}
                 </div>
 
                 <div className='landing__event-btn'>
@@ -132,10 +143,15 @@ class LandingComponent extends React.Component<LandingProps> {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  status: state.auth.status
+  status: state.auth.status,
+  events: state.events.events,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  loadEvents: () => dispatch(new LoadEvents()),
 });
 
 export const Landing = connect(
   mapStateToProps,
-  {}
+  mapDispatchToProps,
 )(LandingComponent);
