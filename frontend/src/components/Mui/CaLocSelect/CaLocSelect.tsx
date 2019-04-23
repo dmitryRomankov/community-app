@@ -33,6 +33,7 @@ export class CaLocSelect extends React.Component<CaLocSelectProps> {
         <MenuItem style={{display: 'none'}} value=''>Set a location</MenuItem>
         {values.map((locations, index) =>
           <MenuItem
+            className='ca-select__item'
             key={locations}
             value={values[index]}>
               {locations}
