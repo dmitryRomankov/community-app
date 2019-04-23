@@ -13,23 +13,45 @@
   margin: auto;
   background: linear-gradient(90deg, rgba(27,30,38,0.82) 0%, rgba(13,13,13,0) 100%) ,
   url(https://generocity.org/philly/wp-content/uploads/sites/2/2015/10/GenerocityMeetup1.jpg);
-  
+
+  &__content {
+    padding: 24px 120px;
+    height: 247px;
+  }
+
+  &__path {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: $color-white;
+    height: 20px;
+    width: 68px;
+  }
+
+  &__path-link {
+    text-decoration: none;
+    color: $color-blue;
+  }
+
+  &__path-separator {
+    margin: 0 7px;
+  }
+
   &__title {
-    margin-left: 120px;
+    margin: 15px 0 8px 0;
     width: 652px;
     color: $color-white;
     font-size: 56px;
     font-weight: 500;
     line-height: 64px;
-    padding-top: 59px;
-    flex-grow: 1;
   }
 }
 
 .event-information {
   width: 100%;
   height: 73px;
-  margin-bottom: 0px;
+  padding: 0 120px;
+  box-sizing: border-box;
   background-color: rgba(0,0,0,0.49);
 }
 
@@ -38,30 +60,23 @@
   flex-direction: row;
   justify-content: space-between;
   width: 1200px;
-  margin: auto;
-}
-
-.information__share {
-  cursor: pointer;
 }
 
 .widget {
   display: flex;
   flex-direction: row;
   align-items: center;
-
-  &__online {
-      margin-right: 32px;
-  }
   
   &__date {
     display: flex;
     align-items: center;
+    margin-right: 25px;
   }
 
   &__city {
     display: flex;
     align-items: center;
+    margin-right: 25px;
   }
 
   &__skills {
@@ -74,22 +89,19 @@
 
 .number {
   color: $color-green;
-  display: inline-block;
-  padding-left: 8px;
+  margin-left: 9px;
   font-size: 20px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 25px;
-  margin-right: 32px;
 }
 
 .title-city {
   display: inline-block;
-  padding-left: 8px;
+  margin-left: 9px;
   color: $color-white;
   font-size: 20px;
   font-weight: 200;
   line-height: 25px;
-  margin-right: 32px;
 }
 
 .event__information > div{
@@ -103,3 +115,8 @@
   width: 30%;
 }
 
+.information__share {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

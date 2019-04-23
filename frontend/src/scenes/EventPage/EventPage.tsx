@@ -17,6 +17,8 @@ import {
   EventProps,
 } from './Event.model';
 
+import { CaButton, CaLocSelect } from 'components';
+
 import { Dispatch } from 'redux';
 import { LoadEvent } from 'store/events';
 import { Redirect } from 'react-router';
@@ -27,6 +29,15 @@ import iconShare from 'assets/svg/icon-share.svg';
 import calendarGreen from 'assets/svg/icon-calendar--green.svg';
 import location from 'assets/svg/icon-location.svg';
 import online from 'assets/svg/icon-online.svg';
+
+import { changeCommaColor } from '../../utils/changeCommaColor';
+
+const addToCalendarBtn = {
+  height: '40px',
+  width: '180px',
+  backgroundColor: '#303644',
+  border: '1px solid #fff'
+};
 
 export class EventPageComp extends React.Component<EventProps> {
   public componentWillMount(): void {
@@ -49,6 +60,8 @@ export class EventPageComp extends React.Component<EventProps> {
 
   public render(): JSX.Element {
     const { events, loadEventStatus } = this.props;
+    const str = 'Java, С++, Ruby, Go';
+    const skills = changeCommaColor(str);
     return (
       <I18n>
         {
@@ -56,16 +69,22 @@ export class EventPageComp extends React.Component<EventProps> {
             <React.Fragment>
               {
                 loadEventStatus === LoadStatus.Error
-                  ? <Redirect to="/events" />
+                  ? <Redirect to='/events' />
                   : events.map(event => {
                     return (
                       <div key={event.id} className='page'>
                         <div className='header'>
-                          <div className='header__title'>{event.title}</div>
+                          <div className='header__content'>
+                            <div className='header__path'>
+                              <a className='header__path-link' href='#'>Events</a>
+                              <span className='header__path-separator'>></span>
+                            </div>
+                            <div className='header__title'>{event.title}</div>
+                            <img src={ online } alt='' className='header__online-status'/>
+                          </div>
                           <div className='event-information'>
                             <div className='information-nav'>
                               <div className='widget'>
-                                <img src={ online } alt='' className='widget__online'/>
                                 <div className='widget__date'>
                                   <img src={ calendarGreen } alt='' />
                                   <div className='number'>
@@ -78,9 +97,16 @@ export class EventPageComp extends React.Component<EventProps> {
                                     { event.city }
                                   </div>
                                 </div>
-                                <div className='widget__skills'>Java, С++, Ruby, Go</div>
+                                <div className='widget__skills'>{ skills }</div>
                               </div>
+
                               <div className='information__share'>
+                                <CaButton style={addToCalendarBtn}>
+                                  {t('Add to my calendar')}
+                                </CaButton>
+                                <CaLocSelect values={['Register', 'Invite team', 'Invite another user']}>
+
+                                </CaLocSelect>
                                 <img src={ iconShare } />
                               </div>
                             </div>
