@@ -6,7 +6,7 @@ import './CaLocSelect.scss';
 
 export class CaLocSelect extends React.Component<CaLocSelectProps> {
   state = {
-    location: 'Select a location',
+    location: '',
   };
 
   handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -18,6 +18,7 @@ export class CaLocSelect extends React.Component<CaLocSelectProps> {
 
     return (
       <Select
+        displayEmpty
         className='ca-select'
         value={this.state.location}
         onChange={this.handleChange}
@@ -29,6 +30,7 @@ export class CaLocSelect extends React.Component<CaLocSelectProps> {
           />
         }
       >
+        <MenuItem style={{display: 'none'}} value=''>Set a location</MenuItem>
         {values.map((locations, index) =>
           <MenuItem
             key={locations}
