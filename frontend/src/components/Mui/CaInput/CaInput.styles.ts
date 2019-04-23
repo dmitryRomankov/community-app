@@ -3,7 +3,8 @@ import { createStyles } from '@material-ui/core';
 export const styles = createStyles({
   input: {
     height: '4rem',
-    width: '50.7rem',
+    width: '100%',
+    boxSizing: 'border-box',
     padding: '0 1.3rem',
     borderRadius: '0.4rem',
     backgroundColor: '#303644',
