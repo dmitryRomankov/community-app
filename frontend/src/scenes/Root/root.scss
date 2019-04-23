@@ -13,6 +13,18 @@ body {
   /* margin-top: $nav-height +  $space-between-nav-and-content; */
   box-sizing: border-box;
   font-family: 'Source Sans Pro', sans-serif;
+
+  .MuiModal-root-57 {
+    div:last-child {
+      margin-top: 1.2rem;
+      margin-left: -1.3rem;
+
+      ul {
+        min-width: 20rem;
+        width: max-content;
+      }
+    }
+  }
 }
 
 .ca-global-fadeIn {
