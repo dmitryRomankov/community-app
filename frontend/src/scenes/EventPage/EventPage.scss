@@ -8,26 +8,26 @@
 .header {
   display: flex;
   flex-direction: column;
-  width: 1440px;
-  height: 320px;
+  width: 144rem;
+  height: 32rem;
   margin: auto;
   background: linear-gradient(90deg, rgba(27,30,38,0.82) 0%, rgba(13,13,13,0) 100%),
   url('../../assets/dojo_pics/event-page-bg.jpg') no-repeat;
   background-size: cover;
 
   &__content {
-    padding: 24px 120px;
-    height: 247px;
+    padding: 2.4rem 12rem;
+    height: 24.7rem;
     position: relative;
   }
 
   &__path {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 600;
-    line-height: 20px;
+    line-height: 2rem;
     color: $color-white;
-    height: 20px;
-    width: 68px;
+    height: 2rem;
+    width: 6.8rem;
   }
 
   &__path-link {
@@ -36,12 +36,12 @@
   }
 
   &__title {
-    margin: 15px 0 8px 0;
-    width: 652px;
+    margin: 1.5rem 0 0.8rem 0;
+    width: 65.2rem;
     color: $color-white;
-    font-size: 56px;
+    font-size: 5.6rem;
     font-weight: 500;
-    line-height: 64px;
+    line-height: 6.4rem;
   }
 
   &__online-status {
@@ -52,14 +52,14 @@
 
 .separator {
   color: $color-white;
-  margin: 0 7px;
+  margin: 0 0.7rem;
 }
 
 .event-information {
   width: 100%;
-  height: 73px;
+  height: 7.3rem;
   display: flex;
-  padding: 0 120px;
+  padding: 0 12rem;
   box-sizing: border-box;
   background-color: rgba(0,0,0,0.7);
 }
@@ -67,7 +67,7 @@
 .information-nav {
   display: flex;
   justify-content: space-between;
-  width: 1200px;
+  width: 120rem;
 }
 
 .widget {
@@ -77,38 +77,38 @@
   &__date {
     display: flex;
     align-items: center;
-    margin-right: 25px;
+    margin-right: 2.5rem;
   }
 
   &__city {
     display: flex;
     align-items: center;
-    margin-right: 25px;
+    margin-right: 2.5rem;
   }
 
   &__skills {
     color: $bg-blue;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 500;
-    line-height: 25px;
+    line-height: 2.5rem;
   }
 }
 
 .number {
   color: $color-green;
-  margin-left: 9px;
-  font-size: 20px;
+  margin-left: 0.9rem;
+  font-size: 2rem;
   font-weight: 600;
-  line-height: 25px;
+  line-height: 2.5rem;
 }
 
 .title-city {
   display: inline-block;
-  margin-left: 9px;
+  margin-left: 0.9rem;
   color: $color-white;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 200;
-  line-height: 25px;
+  line-height: 2.5rem;
 }
 
 .event__information > div{
@@ -117,8 +117,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-right: 2px solid $background-color;
-  height: 80px;
+  border-right: 0.2rem solid $background-color;
+  height: 8rem;
   width: 30%;
 }
 

@@ -21,7 +21,6 @@ export class CaLocSelect extends React.Component<CaLocSelectProps> {
         displayEmpty
         className='ca-select'
         { ...otherProps }
-        // className={classNames(classes.select, className)}
         value={this.state.location}
         onChange={this.handleChange}
         input={
