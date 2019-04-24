@@ -81,7 +81,7 @@ export class EventPageComp extends React.Component<EventProps> {
                           <div className='header__content'>
                             <div className='header__path'>
                               <a className='header__path-link' href='#'>Events</a>
-                              <span className='header__path-separator'>></span>
+                              <span className='separator'>></span>
                             </div>
                             <div className='header__title'>{event.title}</div>
                             <img src={ online } alt='' className='header__online-status'/>
@@ -93,6 +93,8 @@ export class EventPageComp extends React.Component<EventProps> {
                                   <img src={ calendarGreen } alt='' />
                                   <div className='number'>
                                     { event.begginingDate }
+                                    <span className='separator'>/</span>
+                                    { event.begginingInTime }
                                   </div>
                                 </div>
                                 <div className='widget__city'>
@@ -103,13 +105,12 @@ export class EventPageComp extends React.Component<EventProps> {
                                 </div>
                                 <div className='widget__skills'>{ skills }</div>
                               </div>
-
                               <div className='information__share'>
                                 <CaButton style={ addToCalendarBtn }>
                                   {t('Add to my calendar')}
                                 </CaButton>
-                                <CaLocSelect values={ menuValues } />
-                                <img src={ iconBookmark } />
+                                <CaLocSelect className={'blue-select'} values={ menuValues } placeholder={'Wanna have fun'}/>
+                                <img className='information__bookmark-icon' src={ iconBookmark } />
                                 <img src={ iconShare } />
                               </div>
                             </div>

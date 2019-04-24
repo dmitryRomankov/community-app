@@ -25,7 +25,7 @@
   font-size: 1.4rem;
   line-height: 1.8rem;
   font-weight: 300;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: $color-gray;
 }
 
@@ -44,3 +44,49 @@
 
 .ca-select > div > svg > path { display: none; }
 .ca-select > div > div:focus { background: none; }
+
+.blue-select {
+  height: 4rem;
+  min-width: 18rem;
+  width: max-content;
+  padding: 0;
+  border-radius: 2rem;
+  background-color: $bg-blue;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__item {
+    span { display: none; }
+  }
+
+  &__item:hover {
+    color: $color-gray-1;
+  }
+}
+
+.blue-select > div {
+  height: 100%;
+  font-size: 1.6rem;
+  line-height: 2rem;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: $color-white;
+}
+
+.blue-select > div > svg {
+  background: url('../../../assets/svg/icon-path--down.svg') no-repeat;
+  background-position: right center;
+  margin-right: 2.4rem;
+}
+
+.blue-select > div > div {
+  padding: 0 4.8rem 0 2.4rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.blue-select > div > svg > path { display: none; }
+.blue-select > div > div:focus { background: none; }

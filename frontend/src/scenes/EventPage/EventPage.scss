@@ -34,10 +34,6 @@
     color: $color-blue;
   }
 
-  &__path-separator {
-    margin: 0 7px;
-  }
-
   &__title {
     margin: 15px 0 8px 0;
     width: 652px;
@@ -46,6 +42,11 @@
     font-weight: 500;
     line-height: 64px;
   }
+}
+
+.separator {
+  color: $color-white;
+  margin: 0 7px;
 }
 
 .event-information {
@@ -115,8 +116,14 @@
   width: 30%;
 }
 
-.information__share {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+.information {
+  &__share {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__bookmark-icon {
+    margin: 0 0.8rem
+  }
 }
