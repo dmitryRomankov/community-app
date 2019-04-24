@@ -16,7 +16,8 @@
   background-size: cover;
 
   &__content {
-    padding: 2.4rem 12rem;
+    padding: 2.4rem 12rem 0 12rem;
+    box-sizing: border-box;
     height: 24.7rem;
     position: relative;
   }
@@ -50,6 +51,7 @@
   }
 }
 
+// .test { margin-bottom: 0;}
 .separator {
   color: $color-white;
   margin: 0 0.7rem;

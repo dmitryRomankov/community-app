@@ -11,6 +11,7 @@ import {
   AppState
 } from 'store';
 
+import addToCalendarBtn from './EventPage.style';
 import './EventPage.scss';
 
 import {
@@ -32,14 +33,6 @@ import location from 'assets/svg/icon-location.svg';
 import online from 'assets/svg/icon-online.svg';
 
 import { changeCommaColor } from '../../utils/changeCommaColor';
-
-const addToCalendarBtn = {
-  height: '40px',
-  width: '180px',
-  backgroundColor: '#303644',
-  border: '1px solid #fff',
-  marginRight: '8px',
-};
 
 export class EventPageComp extends React.Component<EventProps> {
   public componentWillMount(): void {

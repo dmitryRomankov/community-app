@@ -6,6 +6,14 @@ import { Link } from './Navbar.model';
 import './Navbar.scss';
 
 export const CaNavbar = (props: NavbarProps) => {
+
+  // let activeStyle;
+  // let url = window.location.hash;
+  // url = url.replace('#/','/')
+  // if (url == this.props.to){
+  // activeStyle = { opacity: 0.5 }
+  // }
+
   return (
     <div className='ca-navbar'>
       <div className='ca-navbar__container'>
@@ -16,6 +24,11 @@ export const CaNavbar = (props: NavbarProps) => {
             props.linksToRender.map((link: Link, index: number) => {
               return (
                 <NavLink
+                  isActive={(navLink, currentPath) => {
+                      return currentPath.pathname === link.to ||
+                      currentPath.pathname.includes(link.to.slice(0, -1));
+                    }
+                  }
                   key={index}
                   to={link.to}
                   activeClassName={link.activeClassName}
