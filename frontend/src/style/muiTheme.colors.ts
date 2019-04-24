@@ -24,10 +24,10 @@ export const successSnackbarBgColor = '#43a047';
 export const defaultSelectIconColor = '#f4b33a';
 
 // menu colors
-export const defaultMenuBgColor = '#313c45';
+export const defaultMenuBgColor = '#303644';
 
 // menu item colors
-export const defaultMenuItemTextColor = '#f4b33a';
+export const defaultMenuItemTextColor = '#fff';
 
 // dialog colors
 export const defaultDialogTextColor = '#f4b33a';
