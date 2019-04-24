@@ -12,7 +12,7 @@ import {
 } from 'store';
 
 import './EventPage.scss';
-
+import { CaButton } from 'components';
 import {
   EventProps,
 } from './Event.model';
@@ -86,6 +86,13 @@ export class EventPageComp extends React.Component<EventProps> {
                             </div>
                           </div>
                         </div>
+                        <footer className='footer'>
+                          <div className='footer__container'>
+                            <CaButton className='event-edit-btn'>
+                              {t('Edit event')}
+                            </CaButton>
+                          </div>
+                        </footer>
                       </div>
                     );
                   }
