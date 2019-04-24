@@ -26,6 +26,7 @@ import { Redirect } from 'react-router';
 //import { YandexMap } from 'components';
 
 import iconShare from 'assets/svg/icon-share.svg';
+import iconBookmark from 'assets/svg/icon-bookmark--solid.svg';
 import calendarGreen from 'assets/svg/icon-calendar--green.svg';
 import location from 'assets/svg/icon-location.svg';
 import online from 'assets/svg/icon-online.svg';
@@ -108,6 +109,7 @@ export class EventPageComp extends React.Component<EventProps> {
                                   {t('Add to my calendar')}
                                 </CaButton>
                                 <CaLocSelect values={ menuValues } />
+                                <img src={ iconBookmark } />
                                 <img src={ iconShare } />
                               </div>
                             </div>
