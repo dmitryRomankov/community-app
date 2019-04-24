@@ -11,8 +11,9 @@
   width: 1440px;
   height: 320px;
   margin: auto;
-  background: linear-gradient(90deg, rgba(27,30,38,0.82) 0%, rgba(13,13,13,0) 100%) ,
-  url(https://generocity.org/philly/wp-content/uploads/sites/2/2015/10/GenerocityMeetup1.jpg);
+  background: linear-gradient(90deg, rgba(27,30,38,0.82) 0%, rgba(13,13,13,0) 100%),
+  url('../../assets/dojo_pics/event-page-bg.jpg') no-repeat;
+  background-size: cover;
 
   &__content {
     padding: 24px 120px;
