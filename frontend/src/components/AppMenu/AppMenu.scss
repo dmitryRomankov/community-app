@@ -1,16 +1,23 @@
+@import '../../style/settings.scss';
+
 .app-menu__profile {
   display: flex;
-  padding: 16px;
-  border-radius: 4px 4px 0 0;
-  background-color: #4a5966;
-  min-width: 250px;
+  padding: 1.6rem;
+  border-radius: 0.4rem 0.4rem 0 0;
+  background-color: $bg-gray;
+  min-width: 25rem;
+
+  & + ul {
+    background: $bg-gray;
+    li > div { padding: 0; }
+  }
 
   &-icon-block {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -3px;
-    margin-right: 14px;
+    margin-left: -0.3rem;
+    margin-right: 1.4rem;
   }
 
   &-text-block {
@@ -20,8 +27,8 @@
   }
 
   &-name, &-email {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    color: #fff;
+    font-family: 'Source Sans Pro';
+    color: $color-white;
     font-size: 1.4rem;
     font-weight: 300;
   }
