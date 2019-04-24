@@ -36,7 +36,8 @@ const addToCalendarBtn = {
   height: '40px',
   width: '180px',
   backgroundColor: '#303644',
-  border: '1px solid #fff'
+  border: '1px solid #fff',
+  marginRight: '8px',
 };
 
 export class EventPageComp extends React.Component<EventProps> {
@@ -62,6 +63,8 @@ export class EventPageComp extends React.Component<EventProps> {
     const { events, loadEventStatus } = this.props;
     const str = 'Java, С++, Ruby, Go';
     const skills = changeCommaColor(str);
+    const menuValues = ['Register', 'Invite team', 'Invite another user'];
+
     return (
       <I18n>
         {
@@ -101,12 +104,10 @@ export class EventPageComp extends React.Component<EventProps> {
                               </div>
 
                               <div className='information__share'>
-                                <CaButton style={addToCalendarBtn}>
+                                <CaButton style={ addToCalendarBtn }>
                                   {t('Add to my calendar')}
                                 </CaButton>
-                                <CaLocSelect values={['Register', 'Invite team', 'Invite another user']}>
-
-                                </CaLocSelect>
+                                <CaLocSelect values={ menuValues } />
                                 <img src={ iconShare } />
                               </div>
                             </div>
