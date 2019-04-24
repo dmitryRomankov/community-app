@@ -15,7 +15,7 @@ export class ControlPanel extends React.Component {
       <section className='ca-control-panel'>
         <div className='ca-control-panel__location'>
           <h3 className='ca-control-panel__heading'>Location</h3>
-          <CaLocSelect values={['Select a location', '1', '2']}/>
+          <CaLocSelect values={['1', '2', '3']}/>
         </div>
         <div className='ca-control-panel__technology'>
           <h3 className='ca-control-panel__heading'>Technology</h3>

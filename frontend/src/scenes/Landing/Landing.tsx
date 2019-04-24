@@ -6,7 +6,7 @@ import { Dispatch } from 'redux';
 import { I18n } from 'react-i18next';
 import { AppState } from 'store';
 import { CaButton, CaEventCard } from 'components';
-
+import { NavLink } from 'react-router-dom';
 import { LoadEvents } from 'store/events';
 
 import { LandingProps } from './Landing.model';
@@ -92,9 +92,11 @@ class LandingComponent extends React.Component<LandingProps> {
                 </div>
 
                 <div className='landing__event-btn'>
-                  <CaButton style={eventButton}>
-                    {t('All events')}
-                  </CaButton>
+                  <NavLink to={`/events/`}>
+                    <CaButton style={eventButton}>
+                      {t('All events')}
+                    </CaButton>
+                  </NavLink>
                 </div>
 
                 <section className='landing-banner'>
