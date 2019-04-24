@@ -18,6 +18,7 @@
   &__content {
     padding: 24px 120px;
     height: 247px;
+    position: relative;
   }
 
   &__path {
@@ -41,6 +42,11 @@
     font-size: 56px;
     font-weight: 500;
     line-height: 64px;
+  }
+
+  &__online-status {
+    position: absolute;
+    bottom: 2.8rem;
   }
 }
 
