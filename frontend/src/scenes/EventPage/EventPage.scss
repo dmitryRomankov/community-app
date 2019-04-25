@@ -51,7 +51,6 @@
   }
 }
 
-// .test { margin-bottom: 0;}
 .separator {
   color: $color-white;
   margin: 0 0.7rem;
@@ -113,6 +112,18 @@
   line-height: 2.5rem;
 }
 
+.information {
+  &__share {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__bookmark-icon {
+    margin: 0 0.8rem
+  }
+}
+
 .event__information > div {
   display: flex;
   justify-content: center;
@@ -124,14 +135,32 @@
   width: 30%;
 }
 
-.information {
-  &__share {
+.footer {
+  width: 100%;
+  background-color: $bg-black-light;
+  position: fixed;
+  bottom: 0;
+
+  &__container {
+    height: 8rem;
+    width: 144rem;
+    margin: auto;
+    box-sizing: border-box;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
-    cursor: pointer;
+    padding: 0 12rem;
+    box-sizing: content-box;
   }
 
-  &__bookmark-icon {
-    margin: 0 0.8rem
+  &__edit-btn {
+    padding-right: 12rem;
+  }
+
+  &__edit-btn-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.6rem;
+    background: url(../../assets//svg/pencil-edit-button.svg) no-repeat;
   }
 }

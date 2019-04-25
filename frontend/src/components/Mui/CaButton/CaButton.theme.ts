@@ -9,7 +9,8 @@ import {
 
 export const MuiButton: Partial<StyleRules<ButtonClassKey>> = {
   root: {
-    width: '136px',
+    width: 'max-content',
+    minWidth: '136px',
     height: '40px',
     borderRadius: '20px',
     backgroundColor: '#0084EA',

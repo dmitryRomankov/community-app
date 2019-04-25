@@ -13,7 +13,6 @@ import {
 
 import addToCalendarBtn from './EventPage.style';
 import './EventPage.scss';
-
 import {
   EventProps,
 } from './Event.model';
@@ -109,6 +108,14 @@ export class EventPageComp extends React.Component<EventProps> {
                             </div>
                           </div>
                         </div>
+                        <footer className='footer'>
+                          <div className='footer__container'>
+                            <CaButton className='footer__edit-btn'>
+                              <img src='' className='footer__edit-btn-icon' alt=''/>
+                              {t('Edit event')}
+                            </CaButton>
+                          </div>
+                        </footer>
                       </div>
                     );
                   }
