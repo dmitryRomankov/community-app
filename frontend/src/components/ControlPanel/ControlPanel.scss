@@ -2,7 +2,22 @@
 
 .ca-control-panel {
   display: flex;
-  padding: 3.2rem 0;
+  flex-direction: column;
+  height: 18.9rem;
+  background-color: $bg-black-light;
+
+  &__content {
+    width: 120rem;
+    margin: auto;
+  }
+
+  &__first-row {
+    display: flex;
+  }
+
+  &__second-row {
+    margin-top: 1.5rem;
+  }
 
   &__heading {
     color: $color-white;
@@ -12,8 +27,17 @@
     margin-bottom: 0.8rem;
   }
 
+  &__game-select {
+    width: 50.6rem;
+    margin-right: 1.6rem;
+  }
+
   &__technology {
-    width: 50.5rem;
+    width: 100%;
+  }
+
+  &__date-range {
+    margin: 0 1.6rem;
   }
 
   &__pickers {
@@ -39,10 +63,3 @@
     flex-wrap: wrap;
   }
 }
-
-.test {
-  color: $color-white;
-}
-
-.ca-control-panel > div { margin-right: 1.6rem; }
-.ca-control-panel div:last-child { margin-right: 0; }
