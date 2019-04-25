@@ -6,14 +6,6 @@ import { Link } from './Navbar.model';
 import './Navbar.scss';
 
 export const CaNavbar = (props: NavbarProps) => {
-
-  // let activeStyle;
-  // let url = window.location.hash;
-  // url = url.replace('#/','/')
-  // if (url == this.props.to){
-  // activeStyle = { opacity: 0.5 }
-  // }
-
   return (
     <div className='ca-navbar'>
       <div className='ca-navbar__container'>
