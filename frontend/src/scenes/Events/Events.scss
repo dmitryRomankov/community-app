@@ -6,7 +6,7 @@
 }
 
 .event-head {
-    border-bottom: 0.1rem solid $bg-blue-light;
+    border-bottom: 0.1rem solid $bg-gray-dark-1;
 }
 
 .event-nav {
@@ -65,7 +65,7 @@
 
 .main-wrapper {
     width: 100%;
-    background-color: $bg-black-light;
+    background-color: $bg-gray-dark;
 }
 
 .event-accordion {
@@ -140,6 +140,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding-bottom: 4.5rem;
+    padding-top: 2.4rem; 
 
     & > a {
         margin-bottom: 3.9rem;

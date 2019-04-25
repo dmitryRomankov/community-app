@@ -73,10 +73,8 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
               })}
             </div>
           </div>
+          <ControlPanel />
           <div className='event-list'>
-            <div className='event-input'>
-              <ControlPanel />
-            </div>
             <div className='all-event'>{
               events.map(event => {
                 return (
