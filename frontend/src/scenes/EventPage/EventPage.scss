@@ -144,4 +144,11 @@
   &__edit-btn {
     padding-right: 12rem;
   }
+
+  &__edit-btn-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.6rem;
+    background: url(../../assets//svg/pencil-edit-button.svg) no-repeat;
+  }
 }
