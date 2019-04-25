@@ -12,6 +12,7 @@ import {
 
 import { ControlPanel } from 'components/ControlPanel';
 import { CaEventCard } from 'components/EventCard';
+import { CaEventsTabs } from 'components/Mui';
 
 import { LoadEvents } from 'store/events';
 
@@ -37,13 +38,13 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
 
   public render(): JSX.Element {
     const { events } = this.props;
+
     return (
       <div className='wrapper'>
         <div className='event-head'>
           <div className='event-nav'>
             <div className='nav'>
-              <div className='nav__current'>Current & Future Events</div>
-              <div className='nav__archive'>Archive Reports</div>
+              <CaEventsTabs {...events}/>
             </div>
             <button className='event-nav__create-event-btn'>Create new event</button>
           </div>

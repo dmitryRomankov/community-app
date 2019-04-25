@@ -1,0 +1,24 @@
+@import "../../style/settings.scss";
+
+.wrapper {
+    width: 100%;
+    font-family: "Source Sans Pro";
+}
+
+.event-list {
+  background-color: $bg-gray-dark;
+}
+
+.all-event {
+  width: 120rem;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 4.5rem;
+  padding-top: 2.4rem; 
+
+  & > a {
+      margin-bottom: 3.9rem;
+  }
+}
