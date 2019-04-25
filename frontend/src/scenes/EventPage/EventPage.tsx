@@ -110,7 +110,7 @@ export class EventPageComp extends React.Component<EventProps> {
                         </div>
                         <footer className='footer'>
                           <div className='footer__container'>
-                            <CaButton className='event-edit-btn'>
+                            <CaButton className='footer__edit-btn'>
                               {t('Edit event')}
                             </CaButton>
                           </div>
