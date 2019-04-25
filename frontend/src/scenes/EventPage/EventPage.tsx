@@ -11,11 +11,14 @@ import {
   AppState
 } from 'store';
 
+import addToCalendarBtn from './EventPage.style';
 import './EventPage.scss';
 
 import {
   EventProps,
 } from './Event.model';
+
+import { CaButton, CaLocSelect } from 'components';
 
 import { Dispatch } from 'redux';
 import { LoadEvent } from 'store/events';
@@ -24,9 +27,12 @@ import { Redirect } from 'react-router';
 //import { YandexMap } from 'components';
 
 import iconShare from 'assets/svg/icon-share.svg';
+import iconBookmark from 'assets/svg/icon-bookmark--solid.svg';
 import calendarGreen from 'assets/svg/icon-calendar--green.svg';
 import location from 'assets/svg/icon-location.svg';
 import online from 'assets/svg/icon-online.svg';
+
+import { changeCommaColor } from '../../utils/changeCommaColor';
 
 export class EventPageComp extends React.Component<EventProps> {
   public componentWillMount(): void {
@@ -49,6 +55,10 @@ export class EventPageComp extends React.Component<EventProps> {
 
   public render(): JSX.Element {
     const { events, loadEventStatus } = this.props;
+    const str = 'Java, С++, Ruby, Go';
+    const skills = changeCommaColor(str);
+    const menuValues = ['Register', 'Invite team', 'Invite another user'];
+
     return (
       <I18n>
         {
@@ -56,20 +66,28 @@ export class EventPageComp extends React.Component<EventProps> {
             <React.Fragment>
               {
                 loadEventStatus === LoadStatus.Error
-                  ? <Redirect to="/events" />
+                  ? <Redirect to='/events' />
                   : events.map(event => {
                     return (
                       <div key={event.id} className='page'>
                         <div className='header'>
-                          <div className='header__title'>{event.title}</div>
+                          <div className='header__content'>
+                            <div className='header__path'>
+                              <a className='header__path-link' href='#'>Events</a>
+                              <span className='separator'>></span>
+                            </div>
+                            <div className='header__title'>{event.title}</div>
+                            <img src={ online } alt='' className='header__online-status'/>
+                          </div>
                           <div className='event-information'>
                             <div className='information-nav'>
                               <div className='widget'>
-                                <img src={ online } alt='' className='widget__online'/>
                                 <div className='widget__date'>
                                   <img src={ calendarGreen } alt='' />
                                   <div className='number'>
                                     { event.begginingDate }
+                                    <span className='separator'>/</span>
+                                    { event.begginingInTime }
                                   </div>
                                 </div>
                                 <div className='widget__city'>
@@ -78,9 +96,14 @@ export class EventPageComp extends React.Component<EventProps> {
                                     { event.city }
                                   </div>
                                 </div>
-                                <div className='widget__skills'>Java, С++, Ruby, Go</div>
+                                <div className='widget__skills'>{ skills }</div>
                               </div>
                               <div className='information__share'>
+                                <CaButton style={ addToCalendarBtn }>
+                                  {t('Add to my calendar')}
+                                </CaButton>
+                                <CaLocSelect className={'blue-select'} values={ menuValues } placeholder={'Wanna have fun'}/>
+                                <img className='information__bookmark-icon' src={ iconBookmark } />
                                 <img src={ iconShare } />
                               </div>
                             </div>
