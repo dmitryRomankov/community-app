@@ -16,6 +16,11 @@ export const CaNavbar = (props: NavbarProps) => {
             props.linksToRender.map((link: Link, index: number) => {
               return (
                 <NavLink
+                  isActive={(navLink, currentPath) => {
+                      return currentPath.pathname === link.to ||
+                      currentPath.pathname.includes(link.to.slice(0, -1));
+                    }
+                  }
                   key={index}
                   to={link.to}
                   activeClassName={link.activeClassName}

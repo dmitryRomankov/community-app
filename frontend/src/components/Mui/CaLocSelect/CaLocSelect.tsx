@@ -11,15 +11,16 @@ export class CaLocSelect extends React.Component<CaLocSelectProps> {
 
   handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     this.setState({ location: event.target.value });
-  };
+  }
 
   public render(): JSX.Element {
-    const { values } = this.props;
+    const { values, placeholder, ...otherProps } = this.props;
 
     return (
       <Select
         displayEmpty
         className='ca-select'
+        { ...otherProps }
         value={this.state.location}
         onChange={this.handleChange}
         input={
@@ -30,13 +31,14 @@ export class CaLocSelect extends React.Component<CaLocSelectProps> {
           />
         }
       >
-        <MenuItem style={{display: 'none'}} value=''>Set a location</MenuItem>
-        {values.map((locations, index) =>
+        <MenuItem style={{display: 'none'}} value=''>{placeholder}</MenuItem>
+        {values.map((item, index) =>
           <MenuItem
             className='ca-select__item'
-            key={locations}
-            value={values[index]}>
-              {locations}
+            key={item}
+            value={values[index]}
+          >
+            {item}
           </MenuItem>
         )}
       </Select>

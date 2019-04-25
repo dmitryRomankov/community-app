@@ -8,98 +8,118 @@
 .header {
   display: flex;
   flex-direction: column;
-  width: 1440px;
-  height: 320px;
+  width: 144rem;
+  height: 32rem;
   margin: auto;
-  background: linear-gradient(90deg, rgba(27,30,38,0.82) 0%, rgba(13,13,13,0) 100%) ,
-  url(https://generocity.org/philly/wp-content/uploads/sites/2/2015/10/GenerocityMeetup1.jpg);
-  
-  &__title {
-    margin-left: 120px;
-    width: 652px;
-    color: $color-white;
-    font-size: 56px;
-    font-weight: 500;
-    line-height: 64px;
-    padding-top: 59px;
-    flex-grow: 1;
+  background: linear-gradient(90deg, rgba(27,30,38,0.82) 0%, rgba(13,13,13,0) 100%),
+  url('../../assets/dojo_pics/event-page-bg.jpg') no-repeat;
+  background-size: cover;
+
+  &__content {
+    padding: 2.4rem 12rem 0 12rem;
+    box-sizing: border-box;
+    height: 24.7rem;
+    position: relative;
   }
+
+  &__path {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2rem;
+    color: $color-white;
+    height: 2rem;
+    width: 6.8rem;
+  }
+
+  &__path-link {
+    text-decoration: none;
+    color: $color-blue;
+  }
+
+  &__title {
+    margin: 1.5rem 0 0.8rem 0;
+    width: 65.2rem;
+    color: $color-white;
+    font-size: 5.6rem;
+    font-weight: 500;
+    line-height: 6.4rem;
+  }
+
+  &__online-status {
+    position: absolute;
+    bottom: 2.8rem;
+  }
+}
+
+.separator {
+  color: $color-white;
+  margin: 0 0.7rem;
 }
 
 .event-information {
   width: 100%;
-  height: 73px;
-  margin-bottom: 0px;
-  background-color: rgba(0,0,0,0.49);
+  height: 7.3rem;
+  display: flex;
+  padding: 0 12rem;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.7);
 }
 
 .information-nav {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-  width: 1200px;
-  margin: auto;
-}
-
-.information__share {
-  cursor: pointer;
+  width: 120rem;
 }
 
 .widget {
   display: flex;
-  flex-direction: row;
   align-items: center;
-
-  &__online {
-      margin-right: 32px;
-  }
   
   &__date {
     display: flex;
     align-items: center;
+    margin-right: 2.5rem;
   }
 
   &__city {
     display: flex;
     align-items: center;
+    margin-right: 2.5rem;
   }
 
   &__skills {
     color: $bg-blue;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 500;
-    line-height: 25px;
+    line-height: 2.5rem;
   }
 }
 
 .number {
   color: $color-green;
-  display: inline-block;
-  padding-left: 8px;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 25px;
-  margin-right: 32px;
+  margin-left: 0.9rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 2.5rem;
 }
 
 .title-city {
   display: inline-block;
-  padding-left: 8px;
+  margin-left: 0.9rem;
   color: $color-white;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 200;
-  line-height: 25px;
-  margin-right: 32px;
+  line-height: 2.5rem;
 }
 
-.event__information > div{
+.event__information > div {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border-right: 2px solid $background-color;
-  height: 80px;
+  border-right: 0.2rem solid $background-color;
+  height: 8rem;
   width: 30%;
 }
 
