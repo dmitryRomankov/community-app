@@ -112,6 +112,18 @@
   line-height: 2.5rem;
 }
 
+.information {
+  &__share {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__bookmark-icon {
+    margin: 0 0.8rem
+  }
+}
+
 .event__information > div {
   display: flex;
   justify-content: center;
