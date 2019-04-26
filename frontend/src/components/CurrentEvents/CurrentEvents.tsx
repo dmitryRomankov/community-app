@@ -30,6 +30,7 @@ export class CurrentEvents extends React.Component<CurrentEventsProps> {
 
   public render(): JSX.Element {
     const { events } = this.props;
+
     return (
       <div className='wrapper'>
         <div className='event-accordion'>

@@ -5,11 +5,11 @@ import { CaLocSelectProps } from './CaLocSelect.model';
 import './CaLocSelect.scss';
 
 export class CaLocSelect extends React.Component<CaLocSelectProps> {
-  state = {
+  public state = {
     location: '',
   };
 
-  handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  public handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     this.setState({ location: event.target.value });
   }
 
@@ -18,7 +18,7 @@ export class CaLocSelect extends React.Component<CaLocSelectProps> {
 
     return (
       <Select
-        displayEmpty
+        displayEmpty={true}
         className='ca-select'
         { ...otherProps }
         value={this.state.location}

@@ -2,22 +2,15 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
-import {
-  AppState,
-} from 'store';
-
-import {
-  AuthStatus,
-} from 'models';
-
-import { ControlPanel } from 'components/ControlPanel';
-import { CaEventCard } from 'components/EventCard';
-
+import { AppState } from 'store';
 import { LoadEvents } from 'store/events';
+import { AuthStatus } from 'models';
 
-import { EventsArchiveProps } from './EventsArchive.model';
+import { CaEventCard } from 'components/EventCard';
+import { ControlPanel } from 'components/ControlPanel';
 
 import './EventsArchive.scss';
+import { EventsArchiveProps } from './EventsArchive.model';
 
 export class EventsArchive extends React.Component<EventsArchiveProps> {
   public componentWillMount(): void {
@@ -34,6 +27,7 @@ export class EventsArchive extends React.Component<EventsArchiveProps> {
 
   public render(): JSX.Element {
     const { events } = this.props;
+
     return (
       <div className='wrapper'>
         <ControlPanel />

@@ -1,15 +1,15 @@
 import { History } from 'history';
 
 import {
-    AuthStatus,
-    Event
+  AuthStatus,
+  Event,
 } from 'models';
 
 export interface CurrentEventsProps {
-    children?: JSX.Element;
-    history: History;
-    authStatus: AuthStatus;
-    events: Event[];
+  children?: JSX.Element;
+  history: History;
+  authStatus: AuthStatus;
+  events: Event[];
 
-    loadEvents(): void;
+  loadEvents(): void;
 }
