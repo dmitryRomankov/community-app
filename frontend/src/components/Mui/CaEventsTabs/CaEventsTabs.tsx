@@ -11,7 +11,7 @@ import { EventsTabsProps } from './CaEventsTabs.model';
 
 const TabContainer = (props: any): JSX.Element => {
   return (
-    <Typography component='div'>
+    <Typography className='outline' component='div'>
       {props.children}
     </Typography>
   );
@@ -32,8 +32,8 @@ export class CaEventsTabs extends React.Component<EventsTabsProps> {
     return (
       <React.Fragment>
         <Tabs className='tabs' value={currentTab} onChange={this.handleChange}>
-          <Tab className='tab' label='Current & Future Events' />
-          <Tab className='tab' label='Archive Reports' />
+          <Tab className={this.state.currentTab === 0 ? 'activeTab tab' : 'tab'} label='Current & Future Events' />
+          <Tab className={this.state.currentTab === 1 ? 'activeTab tab' : 'tab'} label='Archive Reports' />
         </Tabs>
 
         {currentTab === 0 && <TabContainer>{<CurrentEvents {...this.props} />}</TabContainer>}

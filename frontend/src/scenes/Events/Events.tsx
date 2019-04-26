@@ -6,7 +6,7 @@ import { AppState } from 'store';
 import { LoadEvents } from 'store/events';
 import { AuthStatus } from 'models';
 
-import { CaEventsTabs, CaButton } from 'components/Mui';
+import { CaButton, CaEventsTabs } from 'components/Mui';
 
 import './Events.scss';
 import { EventsProps } from './Events.model';
@@ -35,7 +35,6 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
         {(t) => (
           <div className='events-page'>
             <div className='events-page__content'>
-              <div className='events-page__line'></div>
               <div className='btn-wrapper'>
                 <div className='btn-container'>
                   <CaButton className='nav-btn' style={navButtonStyle}>

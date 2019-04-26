@@ -6,21 +6,30 @@
 
 .tab {
   margin-bottom: 0;
+
+  span > span {
+    padding: 0;
+
+    span {
+      font-family: 'Source Sans Pro';
+      color: $color-white;
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 2rem;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
 }
 
 .tab:not(:last-child) {
   margin-right: 3.2rem;
 }
-.tab > span > span {
-  padding: 0;
+
+.activeTab > span > span > span {
+  color: $color-blue;
 }
 
-.tab > span > span > span {
-  font-family: 'Source Sans Pro';
-  color: $color-white;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 2rem;
-  text-transform: uppercase;
-  cursor: pointer;
+.outline {
+  box-shadow: 0 -0.1rem 0 $bg-gray-dark-1;
 }

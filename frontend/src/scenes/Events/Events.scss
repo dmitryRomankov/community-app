@@ -1,28 +1,21 @@
 @import '../../style/settings.scss';
 
 .events-page {
-  width: 100%;
-  font-family: 'Source Sans Pro';
-
-  &__content {
-    position: relative;
-
-    .tabs {
-      width: 120rem;
-      margin: auto;
-    }
-
-    .tabs > div > div > div > button {
-      margin-bottom: 0;
-    }
-  }
-
-  &__line {
     width: 100%;
-    border-bottom: 1px solid $bg-gray-dark-1;
-    position: absolute;
-    top: 8.7rem;
-  }
+    font-family: 'Source Sans Pro';
+
+    &__content {
+        position: relative;
+
+        .tabs {
+            width: 120rem;
+            margin: auto;
+        }
+
+        .tabs > div > div > div > button {
+            margin-bottom: 0;
+        }
+    }
 }
 
 .btn-wrapper {
@@ -35,9 +28,8 @@
 }
 
 .btn-container {
-  position: absolute;
-//   width: max-content;
-  margin: auto;
-  top: 2.4rem;
-  z-index: 1;
+    position: absolute;
+    margin: auto;
+    top: 2.4rem;
+    z-index: 1;
 }
