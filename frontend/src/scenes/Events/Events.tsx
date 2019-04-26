@@ -44,7 +44,7 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
         <div className='event-head'>
           <div className='event-nav'>
             <div className='nav'>
-              <CaEventsTabs {...events}/>
+              <CaEventsTabs {...this.props}/>
             </div>
             <button className='event-nav__create-event-btn'>Create new event</button>
           </div>

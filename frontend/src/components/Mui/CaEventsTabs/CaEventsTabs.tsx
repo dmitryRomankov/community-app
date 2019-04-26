@@ -1,13 +1,13 @@
 import * as React from 'react';
-import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Tabs from '@material-ui/core/Tabs';
 import Typography from '@material-ui/core/Typography';
 
-// import { CaEvents } from 'scenes';
-import { ControlPanel } from 'components/ControlPanel';
-// import { EventsArchive } from 'components/EventsArchive';
+import { CurrentEvents } from 'components/CurrentEvents';
+import { EventsArchive } from 'components/EventsArchive';
+import { EventsTabsProps } from './CaEventsTabs.model';
 
-function TabContainer(props: any): JSX.Element {
+const TabContainer = (props: any): JSX.Element => {
   return (
     <Typography component='div'>
       {props.children}
@@ -15,18 +15,17 @@ function TabContainer(props: any): JSX.Element {
   );
 }
 
-export class CaEventsTabs extends React.Component {
-  state = {
+export class CaEventsTabs extends React.Component<EventsTabsProps> {
+  public state = {
     currentTab: 0,
   };
 
-  handleChange = (event: any, currentTab: any) => {
+  public handleChange = (event: any, currentTab: any) => {
     this.setState({currentTab});
   }
 
   public render(): JSX.Element {
     const { currentTab } = this.state;
-    // const { events } = this.props;
 
     return (
       <React.Fragment>
@@ -34,9 +33,9 @@ export class CaEventsTabs extends React.Component {
           <Tab label='Current & Future Events' />
           <Tab label='Archive Reports' />
         </Tabs>
-        {/* {currentTab === 0 && <TabContainer>{<EventsArchive {...events} />}</TabContainer>}
-        {currentTab === 1 && <TabContainer>{<CaEvents {...events} />}</TabContainer>} */}
-        {currentTab === 0 && <TabContainer>{<ControlPanel />}</TabContainer>}
+
+        {currentTab === 0 && <TabContainer>{<CurrentEvents {...this.props} />}</TabContainer>}
+        {currentTab === 1 && <TabContainer>{<EventsArchive {...this.props} />}</TabContainer>}
       </React.Fragment>
     );
   }

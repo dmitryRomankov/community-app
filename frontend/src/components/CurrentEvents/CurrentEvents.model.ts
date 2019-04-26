@@ -5,7 +5,7 @@ import {
     Event
 } from 'models';
 
-export interface EventsTabsProps {
+export interface CurrentEventsProps {
     children?: JSX.Element;
     history: History;
     authStatus: AuthStatus;
