@@ -5,6 +5,8 @@ import Typography from '@material-ui/core/Typography';
 
 import { CurrentEvents } from 'components/CurrentEvents';
 import { EventsArchive } from 'components/EventsArchive';
+
+import './CaEventsTabs.scss';
 import { EventsTabsProps } from './CaEventsTabs.model';
 
 const TabContainer = (props: any): JSX.Element => {
@@ -13,7 +15,7 @@ const TabContainer = (props: any): JSX.Element => {
       {props.children}
     </Typography>
   );
-}
+};
 
 export class CaEventsTabs extends React.Component<EventsTabsProps> {
   public state = {
@@ -29,9 +31,9 @@ export class CaEventsTabs extends React.Component<EventsTabsProps> {
 
     return (
       <React.Fragment>
-        <Tabs value={currentTab} onChange={this.handleChange}>
-          <Tab label='Current & Future Events' />
-          <Tab label='Archive Reports' />
+        <Tabs className='tabs' value={currentTab} onChange={this.handleChange}>
+          <Tab className='tab' label='Current & Future Events' />
+          <Tab className='tab' label='Archive Reports' />
         </Tabs>
 
         {currentTab === 0 && <TabContainer>{<CurrentEvents {...this.props} />}</TabContainer>}

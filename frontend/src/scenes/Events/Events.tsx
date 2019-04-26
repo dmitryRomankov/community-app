@@ -1,15 +1,20 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-
+import { I18n } from 'react-i18next';
 import { AppState } from 'store';
 import { LoadEvents } from 'store/events';
 import { AuthStatus } from 'models';
 
-import { CaEventsTabs } from 'components/Mui';
+import { CaEventsTabs, CaButton } from 'components/Mui';
 
 import './Events.scss';
 import { EventsProps } from './Events.model';
+
+const navButtonStyle = {
+  minWidth: '16.8rem',
+  width: 'max-content',
+};
 
 export class CaEventsPageComponent extends React.Component<EventsProps> {
   public componentWillMount(): void {
@@ -26,16 +31,23 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
 
   public render(): JSX.Element {
     return (
-      <div className='wrapper'>
-        <div className='event-head'>
-          <div className='event-nav'>
-            <div className='nav'>
-              <CaEventsTabs {...this.props}/>
+      <I18n>
+        {(t) => (
+          <div className='events-page'>
+            <div className='events-page__content'>
+              <div className='events-page__line'></div>
+              <div className='btn-wrapper'>
+                <div className='btn-container'>
+                  <CaButton className='nav-btn' style={navButtonStyle}>
+                    {t('Create new event')}
+                  </CaButton>
+                </div>
+              </div>
+              <CaEventsTabs {...this.props} />
             </div>
-            <button className='event-nav__create-event-btn'>Create new event</button>
           </div>
-        </div>
-      </div>
+        )}
+      </I18n>
     );
   }
 }
