@@ -1,0 +1,36 @@
+@import '../../../style/settings.scss';
+
+.tabs > div > div > span {
+  height: 0.3rem;
+}
+
+.tab {
+  margin-bottom: 0;
+  opacity: 1;
+
+  span > span {
+    padding: 0;
+
+    span {
+      font-family: 'Source Sans Pro';
+      color: $color-gray-2;
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 2rem;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}
+
+.tab:not(:last-child) {
+  margin-right: 3.2rem;
+}
+
+.activeTab > span > span > span {
+  color: $color-blue;
+}
+
+.outline {
+  box-shadow: 0 -0.1rem 0 $bg-gray-dark-1;
+}

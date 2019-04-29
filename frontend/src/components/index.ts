@@ -20,3 +20,4 @@ export * from './Author';
 export * from './YandexMap';
 export * from './EventCard';
 export * from './UserButtons';
+export * from './EventsArchive';
