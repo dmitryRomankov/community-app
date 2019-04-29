@@ -346,6 +346,7 @@ export interface Event {
   locationX: string;
   begginingInTime: string;
   begginingDate: string;
+  online: boolean;
   createAt?: Date;
   updatedAt?: Date;
 }

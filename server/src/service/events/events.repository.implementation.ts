@@ -30,9 +30,9 @@ export class EventsRepositoryImplementation implements EventsRepository {
           begginingInTime: event.begginingInTime,
           begginingDate: event.begginingDate
         });
-        
+
         await gameEvent.save();
-        this.loggerService.infoLog(`event with id ${event.id} added succesfull`);
+        this.loggerService.infoLog(`event with id ${event.id} added successful`);
       } else {
         this.loggerService.infoLog(`user with id ${id} is not admin`);
 
@@ -66,7 +66,7 @@ export class EventsRepositoryImplementation implements EventsRepository {
             id: eventId
           }
         });
-        this.loggerService.infoLog(`event with id ${eventId} deleted succesfull`);
+        this.loggerService.infoLog(`event with id ${eventId} deleted successful`);
       } else {
         this.loggerService.infoLog(`user with id ${id} is not admin`);
 
@@ -113,7 +113,7 @@ export class EventsRepositoryImplementation implements EventsRepository {
             where: { id: event.id }
           });
 
-        this.loggerService.infoLog(`event with id ${event.id} edited succesfull`);
+        this.loggerService.infoLog(`event with id ${event.id} edited successful`);
       } else {
         this.loggerService.infoLog(`user with id ${id} is not admin`);
 
@@ -137,7 +137,7 @@ export class EventsRepositoryImplementation implements EventsRepository {
       const events = await EventModel.findAll();
 
       if (events) {
-        this.loggerService.infoLog(` ${events.length - 1} events get succesfull`);
+        this.loggerService.infoLog(` ${events.length - 1} events get successful`);
 
         return events;
       } else {
@@ -163,7 +163,7 @@ export class EventsRepositoryImplementation implements EventsRepository {
       const event = await EventModel.findOne({ where: { id: eventId } });
 
       if (event) {
-        this.loggerService.infoLog(`event ${eventId} get succesfull`);
+        this.loggerService.infoLog(`event ${eventId} get successful`);
 
         return event;
       } else {

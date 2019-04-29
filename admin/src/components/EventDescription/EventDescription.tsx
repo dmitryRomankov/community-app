@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 
 import { Editor, RichUtils, EditorState } from 'draft-js';
 import { EventDescriptionProps } from './EventDescription.model';
@@ -18,9 +18,9 @@ export class CaEventDescription extends React.Component<{}, { editorState: Edito
     this.setState({ editorState });
     const myText = this.state.editorState.getCurrentContent().getPlainText();
     console.log(myText);
-  };
+  }
 
-  public handleKeyCommand: (command: string) => boolean = (command: string) => {
+  public handleKeyCommand: (command: string) => any = (command: string) => {
     const { editorState } = this.state;
     const newState = RichUtils.handleKeyCommand(editorState, command);
     if (newState) {
@@ -32,7 +32,6 @@ export class CaEventDescription extends React.Component<{}, { editorState: Edito
 
   public toggleBlockType: (blockType: string) => void = (blockType: string) => {
     this.onChange(RichUtils.toggleBlockType(this.state.editorState, blockType));
-    console.log(blockType);
   }
 
   public toggleInlineStyle: (inlineStyle: string) => void = (inlineStyle: string) => {
@@ -49,7 +48,7 @@ export class CaEventDescription extends React.Component<{}, { editorState: Edito
     }
 
     return (
-      <div className="RichEditor-root">
+      <div className='RichEditor-root'>
         <BlockStyleControls
           editorState={this.state.editorState}
           onToggle={this.toggleBlockType}
@@ -64,8 +63,8 @@ export class CaEventDescription extends React.Component<{}, { editorState: Edito
             editorState={this.state.editorState}
             handleKeyCommand={this.handleKeyCommand}
             onChange={this.onChange}
-            placeholder="Description..."
-            ref="editor"
+            placeholder='Description...'
+            ref='editor'
             spellCheck={true}
           />
         </div>
@@ -87,7 +86,7 @@ class StyleButton extends React.Component<EventDescriptionProps, {}> {
   public onToggle: (event: React.MouseEvent<HTMLSpanElement>) => void = (event: React.MouseEvent<HTMLSpanElement>) => {
     event.preventDefault();
     this.props.onToggle(this.props.style);
-  };
+  }
 
   public render(): JSX.Element {
     let className = 'RichEditor-styleButton';
@@ -105,12 +104,12 @@ class StyleButton extends React.Component<EventDescriptionProps, {}> {
 }
 
 const BLOCK_TYPES = [
-  { label: 'H1', style: 'header-one' },
-  { label: 'H2', style: 'header-two' },
-  { label: 'H3', style: 'header-three' },
-  { label: 'H4', style: 'header-four' },
-  { label: 'H5', style: 'header-five' },
-  { label: 'H6', style: 'header-six' },
+  // { label: 'H1', style: 'header-one' },
+  // { label: 'H2', style: 'header-two' },
+  // { label: 'H3', style: 'header-three' },
+  // { label: 'H4', style: 'header-four' },
+  // { label: 'H5', style: 'header-five' },
+  // { label: 'H6', style: 'header-six' },
   { label: 'UL', style: 'unordered-list-item' },
   { label: 'OL', style: 'ordered-list-item' },
   { label: 'Code Block', style: 'code-block' },
@@ -125,7 +124,7 @@ const BlockStyleControls = (props: { editorState: EditorState, onToggle: (blockT
     .getType();
 
   return (
-    <div className="RichEditor-controls">
+    <div className='RichEditor-controls'>
       {BLOCK_TYPES.map((type) =>
         <StyleButton
           key={type.label}
@@ -142,14 +141,14 @@ const BlockStyleControls = (props: { editorState: EditorState, onToggle: (blockT
 const INLINE_STYLES = [
   { label: 'Bold', style: 'BOLD' },
   { label: 'Italic', style: 'ITALIC' },
-  { label: 'Underline', style: 'UNDERLINE' },
+  // { label: 'Underline', style: 'UNDERLINE' },
   { label: 'Monospace', style: 'CODE' },
 ];
 
 const InlineStyleControls = (props: { editorState: EditorState, onToggle: (blockType: string) => void }) => {
   let currentStyle = props.editorState.getCurrentInlineStyle();
   return (
-    <div className="RichEditor-controls">
+    <div className='RichEditor-controls'>
       {INLINE_STYLES.map(type =>
         <StyleButton
           key={type.label}

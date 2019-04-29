@@ -30,13 +30,13 @@ export class EventForm extends React.Component<EventFormProps, EventFormState> {
     this.state = {
       ...props.model,
       title: '',
-      description: '',
+      description: 'Minskkkkkkk',
       city: '',
       place: '',
       address: '',
       locationX: '',
-      begginingInTime: '2019-01-16',
-      begginingDate: '07:30',
+      begginingInTime: '2019-05-19',
+      begginingDate: '00:00',
       isTitleValid: false,
       isDescriptionValid: false,
       isCityValid: false,
@@ -366,7 +366,7 @@ export class EventForm extends React.Component<EventFormProps, EventFormState> {
                   className='ca-game-form__game-btn'
                   disabled={
                     !this.state.title ||
-                    !this.state.description ||
+                    //!this.state.description ||
                     !this.state.city ||
                     !this.state.place ||
                     !this.state.address ||

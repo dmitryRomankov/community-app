@@ -68,6 +68,7 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
                     place={event.place}
                     begginingInTime={event.begginingInTime}
                     begginingDate={event.begginingDate}
+                    online={event.online}
                   />
                 )
               })}
@@ -88,6 +89,7 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
                     place={event.place}
                     begginingInTime={event.begginingInTime}
                     begginingDate={event.begginingDate}
+                    online={event.online}
                   />
                 );
               })

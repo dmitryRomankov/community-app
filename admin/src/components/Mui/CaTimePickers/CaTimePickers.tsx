@@ -16,7 +16,7 @@ export const CaTimePickers = ({ children, className, ...otherProps }: TextFieldP
       id='time'
       label='Alarm clock'
       type='time'
-      defaultValue='07:30'
+      defaultValue='01:59'
       InputLabelProps={{
         shrink: true,
       }}

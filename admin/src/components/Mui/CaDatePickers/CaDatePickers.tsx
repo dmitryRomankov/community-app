@@ -16,7 +16,7 @@ export const CaDatePickers = ({ children, className, ...otherProps }: TextFieldP
         id='date'
         label='Event date'
         type='date'
-        defaultValue='2019-01-16'
+        defaultValue='2019-05-19'
         InputLabelProps={{
           shrink: true,
         }}

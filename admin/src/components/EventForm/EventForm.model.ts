@@ -30,14 +30,14 @@ export interface EventFormState {
         begginingInTime: boolean;
         begginingDate: boolean;
     };
-    titleErrors: string[],
-    descriptionErrors: string[],
-    cityErrors: string[],
-    placeErrors: string[],
-    addressErrors: string[],
-    locationErrors: string[],
-    begginingInTimeErrors: string[],
-    begginingDateErrors: string[],
+    titleErrors: string[];
+    descriptionErrors: string[];
+    cityErrors: string[];
+    placeErrors: string[];
+    addressErrors: string[];
+    locationErrors: string[];
+    begginingInTimeErrors: string[];
+    begginingDateErrors: string[];
 }
 
 export interface EventFormProps {
