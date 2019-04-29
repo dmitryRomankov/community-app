@@ -31,9 +31,19 @@ export class CaEventsTabs extends React.Component<EventsTabsProps> {
 
     return (
       <React.Fragment>
-        <Tabs className='tabs' value={currentTab} onChange={this.handleChange}>
-          <Tab className={this.state.currentTab === 0 ? 'activeTab tab' : 'tab'} label='Current & Future Events' />
-          <Tab className={this.state.currentTab === 1 ? 'activeTab tab' : 'tab'} label='Archive Reports' />
+        <Tabs
+          className='tabs'
+          value={currentTab}
+          onChange={this.handleChange}
+        >
+          <Tab
+            className={this.state.currentTab === 0 ? 'activeTab tab' : 'tab'}
+            label='Current & Future Events'
+          />
+          <Tab
+            className={this.state.currentTab === 1 ? 'activeTab tab' : 'tab'}
+            label='Archive Reports'
+          />
         </Tabs>
 
         {currentTab === 0 && <TabContainer>{<CurrentEvents {...this.props} />}</TabContainer>}
