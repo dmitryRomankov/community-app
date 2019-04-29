@@ -5,8 +5,6 @@
     font-family: 'Source Sans Pro';
 
     &__content {
-        position: relative;
-
         .tabs {
             width: 120rem;
             margin: auto;
@@ -29,8 +27,7 @@
 }
 
 .btn-container {
-    position: absolute;
-    margin: auto;
-    top: 2.4rem;
+    margin-right: 0;
+    margin-top: 2.4rem;
     z-index: 1;
 }

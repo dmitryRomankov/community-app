@@ -6,13 +6,14 @@
 
 .tab {
   margin-bottom: 0;
+  opacity: 1;
 
   span > span {
     padding: 0;
 
     span {
       font-family: 'Source Sans Pro';
-      color: $color-white;
+      color: $color-gray-2;
       font-size: 1.6rem;
       font-weight: 600;
       line-height: 2rem;
