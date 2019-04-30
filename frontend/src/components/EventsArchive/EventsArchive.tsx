@@ -6,7 +6,7 @@ import { AppState } from 'store';
 import { LoadEvents } from 'store/events';
 import { AuthStatus } from 'models';
 
-import { CaEventCard } from 'components/EventCard';
+// import { CaEventCard } from 'components/EventCard';
 import { ControlPanel } from 'components/ControlPanel';
 
 import './EventsArchive.scss';
@@ -26,12 +26,12 @@ export class EventsArchive extends React.Component<EventsArchiveProps> {
   }
 
   public render(): JSX.Element {
-    const { events } = this.props;
+    // const { events } = this.props;
 
     return (
       <div className='wrapper'>
         <ControlPanel />
-        <div className='event-list'>
+        {/* <div className='event-list'>
           <div className='all-event'>{
             events.map(event => {
               return (
@@ -48,7 +48,7 @@ export class EventsArchive extends React.Component<EventsArchiveProps> {
             })
           }
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

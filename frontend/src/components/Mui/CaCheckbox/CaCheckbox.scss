@@ -4,7 +4,8 @@
   label {
     margin: 0;
     height: 4rem;
-    width: 7.2rem;
+    min-width: min-content;
+    width: max-content;
     display: flex;
     justify-content: space-between;
 
