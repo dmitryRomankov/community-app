@@ -40,7 +40,7 @@ export class RegisterUser {
 export class LoginUser {
   public readonly type = AuthTypes.LoginUser;
 
-  constructor(public payload: UserFieldsToLogin) { }
+  constructor() { }
 }
 
 @action()

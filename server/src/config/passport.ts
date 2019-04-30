@@ -1,29 +1,51 @@
-import jwt from 'passport-jwt';
+import { Request } from 'express';
+import passportOAuth2Strategy from 'passport-oauth2';
+import jwt from 'jsonwebtoken';
 
-const JWTStrategy = jwt.Strategy;
-const ExtractJwt = jwt.ExtractJwt;
 import { keys } from './keys';
 import { db, UserModel } from 'models';
 import { PassportStatic } from 'passport';
-import { PassportOptions, User } from 'interfaces';
+import { User } from 'interfaces';
+import { oauth2Config } from './auth.config';
 
-const options: PassportOptions = {
-    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: keys.secretOrKey
-};
+// export const passportConfig = (passport: PassportStatic) => {
+//     passport.use(new passportOAuth2Strategy(oauth2Config, (
+//         req: Request,
+//         accessToken: string,
+//         refreshToken: string,
+//         results: any,
+//         profile: any,
+//         done: any
+//     ) => {
+//         try {
+//             db.connect.sync();
+//             const idToken = results['id_token'];
+//             const userID = jwt.decode(idToken)['sub'];
+//             console.log(userID);
+//             // const user = await UserModel.findById(userID);
+//             return done(null, profile);
+//         } catch {
+//             return (err: Error) => done(err);
+//         }
+//     }));
+// };
 
-export let passportConfig = (passport: PassportStatic) => {
-    passport.use(new JWTStrategy(options, async (jwt_payload, done) => {
-        try {
-            await db.connect.sync();
-            const user = await UserModel.findById(jwt_payload.id);
-            if (user) {
-                return done(null, user);
-            } else {
-                done(null, false, { message: 'User is not found' });
-            }
-        } catch {
-            return (err: Error) => done(err);
-        }
-    }));
-};
+export const strategy = new passportOAuth2Strategy(oauth2Config.config, (
+    req: Request,
+    accessToken: string,
+    refreshToken: string,
+    results: any,
+    profile: any,
+    done: any
+) => {
+    const idToken = results['id_token'];
+    const userEmail = jwt.decode(idToken)['email'];
+    const userToken = jwt.decode(idToken)['sub'];
+    const userinfo = {
+        email: userEmail,
+        userToken
+    }
+    profile = userinfo;
+    console.log(profile);
+    return done(null, profile);
+});

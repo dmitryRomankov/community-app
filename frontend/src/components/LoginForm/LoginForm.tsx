@@ -12,7 +12,7 @@ import { AppState, LoginUser, SocialNetworksLogin } from 'store';
 import {
   AuthStatus,
   UserFieldsToLogin,
-  UserFieldsToRegister,
+  // UserFieldsToRegister,
 } from 'models';
 
 import {
@@ -246,7 +246,7 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  loginUser: (user: UserFieldsToRegister) => dispatch(new LoginUser(user)),
+  loginUser: () => dispatch(new LoginUser()),
   socialNetworksLogin: (socialNetworksUser: SocialNetworksUser) => dispatch(new SocialNetworksLogin(socialNetworksUser))
 });
 

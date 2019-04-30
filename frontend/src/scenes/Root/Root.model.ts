@@ -21,6 +21,8 @@ export interface RootProps {
 
   leaveRoom(battleName: string): void;
 
+  loginUser(): void;
+
   logoutUser(): void;
 
   cleanStatistic(): void;

@@ -37,6 +37,7 @@ import {
   CleanStatistic,
   CloseSnackbar,
   FrontEndUser,
+  LoginUser,
   LeaveRoom,
   LogoutUser,
   SetCurrentUser,
@@ -89,6 +90,10 @@ export class RootComponent extends React.Component<RootProps> {
 
   public closeSnackbar = () => {
     this.props.closeSnackbar();
+  }
+
+  public loginUser = () => {
+    this.props.loginUser();
   }
 
   public logoutUser = (): void => {
@@ -198,15 +203,15 @@ export class RootComponent extends React.Component<RootProps> {
               },
             ]}
           >
-          
-              {
-                !isAuthorized ?
-                  <div className='ca-navbar__menu-login'>
+            {
+              !isAuthorized ?
+                <form className='ca-navbar__menu-login'>
+                  <div>
                     <div className='user-buttons'>
                       <div className='user-buttons__container'>
                         <button
                           className='user-buttons__login-btn'
-                          onClick={this.redToLogin}
+                          onClick={this.loginUser}
                           color='primary'
                         >
                           {t('login')}
@@ -220,19 +225,21 @@ export class RootComponent extends React.Component<RootProps> {
                       </div>
                     </div>
                   </div>
-                  : null
-              }
+                </form>
 
-              {
-                isAuthorized ?
-                  <div className='ca-navbar__menu-container'>
-                    <div className='ca-navbar__profile-name'>{user && user.name}</div>
-                    <AppMenu appMenuItems={appMenuItems} imageUrl={user && user.imageUrl} >
-                      {this.getMenuProfilePanel()}
-                    </AppMenu>
-                  </div>
-                  : null
-              }
+                : null
+            }
+
+            {
+              isAuthorized ?
+                <div className='ca-navbar__menu-container'>
+                  <div className='ca-navbar__profile-name'>{user && user.name}</div>
+                  <AppMenu appMenuItems={appMenuItems} imageUrl={user && user.imageUrl} >
+                    {this.getMenuProfilePanel()}
+                  </AppMenu>
+                </div>
+                : null
+            }
 
             <CaLogo
               text='coding dojo'
@@ -400,6 +407,7 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
+  loginUser: () => dispatch(new LoginUser()),
   logoutUser: () => dispatch(new LogoutUser()),
   cleanStatistic: () => dispatch(new CleanStatistic()),
   leaveRoom: (battleName: string) => dispatch(new LeaveRoom(battleName)),

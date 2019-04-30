@@ -7,6 +7,7 @@ import morgan from 'morgan';
 import SocketIO from 'socket.io';
 import passport from 'passport';
 import cors from 'cors';
+import session from 'express-session';
 
 import configFile from '../../frontend/src/config.json';
 
@@ -21,7 +22,8 @@ import './controller';
 import { CONTAINER } from './service/services-registration';
 
 import { db, RoleModel, Roles } from 'models';
-import { passportConfig } from './config/passport';
+import { strategy } from './config/passport';
+import { authRoutes } from './auth';
 
 const server = new InversifyExpressServer(CONTAINER);
 
@@ -32,12 +34,20 @@ server.setConfig((app) => {
 
     app.use(cors());
     app.use(bodyParser.urlencoded({
-        extended: true
+        extended: false
+    }));
+    app.use(session({
+        secret: 'secret',
+        resave: false,
+        saveUninitialized: false
     }));
     app.use(passport.initialize());
-    passportConfig(passport);
+    app.use(passport.session());
     app.use(bodyParser.json());
+    app.use('/', authRoutes);
 });
+
+passport.use(strategy);
 
 // makeAssosiations();
 

@@ -40,7 +40,7 @@ export class UserController {
           response.status(400).json(error);
       });
   }
- 
+
   /**
    * @param {Request} request - data from request
    * @param {User} request.body - user data for login
@@ -48,21 +48,21 @@ export class UserController {
    * controller return Promise<{ success: boolean, token: string }>
    */
 
-  @httpPost('/login')
-  public postLogin(request: Request, response: Response): Promise<Response | { success: boolean, token: string }> | Response {
-    const { errors, isValid } = validateLoginInput(request.body);
+  // @httpPost('/login')
+  // public postLogin(request: Request, response: Response): Promise<Response | { success: boolean, token: string }> | Response {
+  //   const { errors, isValid } = validateLoginInput(request.body);
 
-    if (!isValid) {
-      return response.status(400).json(errors);
-    }
+  //   if (!isValid) {
+  //     return response.status(400).json(errors);
+  //   }
 
-    return this.userAuthenticationRepository.loginUser(request.body)
-      .catch((error) => {
-        return error.code >= 2000 ?
-          response.status(500).json(error) :
-          response.status(400).json(error);
-      });
-  }
+  //   return this.userAuthenticationRepository.loginUser(request.body)
+  //     .catch((error) => {
+  //       return error.code >= 2000 ?
+  //         response.status(500).json(error) :
+  //         response.status(400).json(error);
+  //     });
+  // }
 
   /**
    * @param {Request} request - data from request

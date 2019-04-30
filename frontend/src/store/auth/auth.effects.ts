@@ -15,7 +15,7 @@ import {
   GetUserLinks,
   GetUserLinksError,
   GetUserLinksSuccess,
-  LoginError,
+  // LoginError,
   LoginUser,
   LogoutUser,
   RegisterUser,
@@ -31,25 +31,11 @@ export const loginUser$ = (actions$: ActionsObservable<LoginUser>) =>
   actions$.pipe(
     ofType(AuthTypes.LoginUser),
     switchMap(action =>
-      from(HttpWrapper.post<UserFieldsToLogin, { token: string }>('api/users/login', action.payload)).pipe(
+      from(HttpWrapper.get('login')).pipe(
         map(res => {
-          const { token } = res.data;
-          Cookies.set('jwtTokenUser', token);
-          setAuthToken(token);
-          const decoded: FrontEndUser = jwt_decode(token);
-
-          return new SetCurrentUser(decoded);
-        }),
-        catchError((error) => {
-          const messages: ErrorBlock[] =
-            !error.response ? [{ msg: error.message }] :
-              error.name !== 'Error' ? [{ msg: error.message }] :
-                Array.isArray(error.response.data) ? error.response.data :
-                  [error.response.data];
-
-          return of(new OpenSnackbar({ type: SnackbarType.Error, messages }), new LoginError()
-          );
+          
         })
+      )
       )
     )
   );
@@ -81,7 +67,7 @@ export const successRegistration$ = (action$: ActionsObservable<RegistrationSucc
   action$.ofType(AuthTypes.RegistrationSuccess).pipe(
     map(action => {
 
-      return new LoginUser(action.payload);
+      return new LoginUser();
     })
   );
 
