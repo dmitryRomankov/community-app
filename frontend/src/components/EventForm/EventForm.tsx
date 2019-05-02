@@ -315,7 +315,7 @@ export class EventForm extends React.Component<EventFormProps, EventFormState> {
                 className='ca-game-form__container'
                 onSubmit={this.handleSubmit}
               >
-                <h2>SETTINGS FORM</h2>
+                <h2>Create New Event</h2>
                 {arrayOfInputs.map((input: string) => { // keys of received object
                   return (
                     <FormGroup key={input}>
