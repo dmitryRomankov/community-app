@@ -1,4 +1,4 @@
-@import "../../../style/settings.scss";
+@import '../../../style/settings.scss';
 
 .ca-checkbox {
   label {
@@ -21,9 +21,8 @@
     }
 
     span:last-child {
-      font-family: "Source Sans Pro", sans-serif;
+      font-family: 'Source Sans Pro', sans-serif;
       font-size: 1.4rem;
-      color: $color-gray;
     }
   }
 }
@@ -31,10 +30,18 @@
 .checked {
   svg { path:last-child { color: $color-green; } }
   span:first-child { background: $color-white; }
+  & + span { color: $color-gray; }
 }
 
-.unchecked { 
+.checkedTheme {
+  svg { path:last-child { color: $color-green; } }
+  span:first-child { background: $color-white; }
+  & + span { color: $color-green; }
+}
+
+.unchecked {
   svg { path:first-child { opacity: 0; } }
   span:first-child { background: $bg-gray-dark; }
   span:last-child { border: 0.1rem solid $color-gray; }
+  & + span { color: $color-gray; }
 }

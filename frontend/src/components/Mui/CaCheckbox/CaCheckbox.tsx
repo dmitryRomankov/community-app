@@ -4,39 +4,54 @@ import Checkbox from '@material-ui/core/Checkbox';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme } from '@material-ui/core/styles';
 
-import { CaCheckboxProps } from './CaCheckbox.model';
 import './CaCheckbox.scss';
+import { CaCheckboxProps } from './CaCheckbox.model';
+
+const theme = createMuiTheme({
+  overrides: {
+    MuiTypography: {
+      root: {
+        paddingLeft: '0.8rem',
+      },
+    },
+  },
+});
 
 export class CaCheckbox extends React.Component<CaCheckboxProps> {
-  state = {
+  public state = {
     isChecked: false,
   };
 
-  toggleChange = () => {
+  public toggleChange = () => {
     this.setState({
       isChecked: !this.state.isChecked,
     });
-  };
+  }
 
   public render(): JSX.Element {
     const { label } = this.props;
+    const checkedTheme = this.props.checkedTheme ? 'checkedTheme' : 'checked';
 
     return (
-      <div className='ca-checkbox'>
-        <FormControlLabel
-          control={
-            <Checkbox
-              onChange={this.toggleChange}
-              checked={this.state.isChecked}
-              className={this.state.isChecked ? 'checked' : 'unchecked'}
-              icon={<CheckBoxOutlineBlankIcon />}
-              checkedIcon={<CheckBoxIcon />}
-            />
-          }
-          label={label}
-        />
-      </div>
+      <MuiThemeProvider theme={theme}>
+        <div className='ca-checkbox'>
+          <FormControlLabel
+            control={
+              <Checkbox
+                onChange={this.toggleChange}
+                checked={this.state.isChecked}
+                className={this.state.isChecked ? checkedTheme : 'unchecked'}
+                icon={<CheckBoxOutlineBlankIcon />}
+                checkedIcon={<CheckBoxIcon />}
+              />
+            }
+            label={label}
+          />
+        </div>
+      </MuiThemeProvider>
     );
   }
 }

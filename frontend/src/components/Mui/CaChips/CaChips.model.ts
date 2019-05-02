@@ -1,4 +1,4 @@
 export interface CaChipsState {
   isFormShown: boolean;
-  chips: object[];
+  chips: any[];
 }

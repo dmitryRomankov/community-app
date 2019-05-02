@@ -1,9 +1,8 @@
 export interface ChipsFormProps {
-  isShown: boolean;
   getTechnologies: any;
+  isShown: boolean;
 }
 
 export interface ChipsFormState {
-  checkedItems: any[];
   technologies: any[];
 }

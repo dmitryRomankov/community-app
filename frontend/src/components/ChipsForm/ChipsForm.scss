@@ -1,11 +1,12 @@
-@import "../../style/settings.scss";
+@import '../../style/settings.scss';
 
 .hide { display: none; }
 
 .chips-form {
+  z-index: 1000;
   margin-top: 0.4rem;
   height: 23.2rem;
-  overflow-y: auto;
+  overflow-y: scroll;
   width: 100%;
   background-color: $bg-gray;
   box-shadow: 0 1px 15px 0 rgba(0,0,0,0.5);
@@ -22,7 +23,7 @@
   }
 
   &__checkbox {
-    width: 50%;
     height: max-content;
+    width: 50%;
   }
 }

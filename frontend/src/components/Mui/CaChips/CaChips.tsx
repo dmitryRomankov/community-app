@@ -19,8 +19,9 @@ export class CaChips extends React.Component<any, CaChipsState> {
       chips: [],
     };
 
+    this.clearChips = this.clearChips.bind(this);
     this.showChipsForm = this.showChipsForm.bind(this);
-    this.getTechnologies = this.getTechnologies.bind(this);
+    this.chooseTechnologies = this.chooseTechnologies.bind(this);
   }
 
   public showChipsForm(): void {
@@ -29,10 +30,20 @@ export class CaChips extends React.Component<any, CaChipsState> {
     }));
   }
 
-  public getTechnologies(value: any): void {
-    const technologies = this.state.chips;
-    technologies.push(value);
-    console.log(technologies);
+  public clearChips(): void {
+    this.setState({chips: []});
+  }
+
+  public chooseTechnologies(value: any, isChecked: boolean): void {
+    const technologies: any[] = this.state.chips;
+
+    if (isChecked) {
+      const isExist = technologies.some(item => item.label === value.label);
+      !isExist ? technologies.push(value) : null;
+    } else {
+      const index = technologies.indexOf(value);
+      technologies.splice(index, 1);
+    }
 
     this.setState({ chips: technologies });
   }
@@ -47,7 +58,7 @@ export class CaChips extends React.Component<any, CaChipsState> {
 
     return (
       <MuiThemeProvider theme={CaChipsTheme}>
-        <section className='test'>
+        <section className='chips'>
           <Paper onClick={this.showChipsForm}>
             {this.state.chips.map((chipsItem: any) => {
               return (
@@ -58,9 +69,11 @@ export class CaChips extends React.Component<any, CaChipsState> {
                 />
               );
             })}
+            <label className='chips__placeholder'>|Select a tag</label>
+            <button className='chips__delete-btn' onClick={this.clearChips} />
           </Paper>
           <ChipsForm
-            getTechnologies={this.getTechnologies}
+            getTechnologies={this.chooseTechnologies}
             isShown={this.state.isFormShown}
           />
         </section>

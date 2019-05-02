@@ -1,9 +1,8 @@
 import * as React from 'react';
 
-import './ChipsForm.scss';
-
 import { CaCheckbox, CaInput } from '../Mui';
 
+import './ChipsForm.scss';
 import { ChipsFormProps, ChipsFormState } from './ChipsForm.model';
 
 export class ChipsForm extends React.Component<ChipsFormProps, ChipsFormState> {
@@ -11,7 +10,6 @@ export class ChipsForm extends React.Component<ChipsFormProps, ChipsFormState> {
     super(props);
 
     this.state = {
-      checkedItems: [],
       technologies: [
         { key: 0, label: 'Python' },
         { key: 1, label: 'JavaScript' },
@@ -30,12 +28,12 @@ export class ChipsForm extends React.Component<ChipsFormProps, ChipsFormState> {
       <div
         key={technology.key}
         className='chips-form__checkbox'
-        onClick={() => {
-          console.log(technology);
-          this.props.getTechnologies(technology);
+        onChange={(event: any) => {
+          this.props.getTechnologies(technology, event.target.checked);
         }}
       >
         <CaCheckbox
+          checkedTheme={true}
           key={technology.key}
           label={technology.label}
         />
@@ -43,8 +41,14 @@ export class ChipsForm extends React.Component<ChipsFormProps, ChipsFormState> {
     ));
 
     return (
-      <form className={this.props.isShown ? 'chips-form' : 'hide'}>
-        <CaInput />
+      <form
+        className={this.props.isShown ? 'chips-form' : 'hide'}
+        style={this.state.technologies.length <= 8 ?
+          { overflowY: 'hidden' } :
+          { overflowY: 'scroll' }
+        }
+      >
+        <CaInput placeholder='Search' darkTheme={true}/>
         <div className='chips-form__checkboxes'>
           { checkboxes }
         </div>
