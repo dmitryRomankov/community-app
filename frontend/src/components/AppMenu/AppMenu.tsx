@@ -66,7 +66,7 @@ export class AppMenu extends React.Component<AppMenuProps, AppMenuState> {
                   <AccountCircle />}
               </IconButton>
 
-              <Popper open={open} anchorEl={anchorEl} transition={true} disablePortal={true}>
+              <Popper open={open} anchorEl={anchorEl} transition={true} disablePortal={true} style={{zIndex: 10000}}>
                 {({ TransitionProps, placement }) => (
                   <Grow
                     {...TransitionProps}
