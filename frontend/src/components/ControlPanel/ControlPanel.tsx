@@ -4,7 +4,7 @@ import './ControlPanel.scss';
 
 import {
   CaCheckbox,
-  CaDatePicker,
+  CaDatePickers,
   CaInput,
   CaLocSelect,
 } from '../../components/Mui';
@@ -26,9 +26,9 @@ export class ControlPanel extends React.Component {
             <div className='ca-control-panel__date-range'>
               <h3 className='ca-control-panel__heading'>Date range</h3>
               <div className='ca-control-panel__pickers'>
-                <CaDatePicker />
+                <CaDatePickers />
                 <span className='ca-control-panel__separator'>-</span>
-                <CaDatePicker />
+                <CaDatePickers />
               </div>
             </div>
             <div className='ca-control-panel__event-type'>

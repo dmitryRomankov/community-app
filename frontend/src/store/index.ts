@@ -8,3 +8,4 @@ export * from './statistic';
 export * from './userSettings';
 export * from './snackbar';
 export * from './room';
+export * from './events';

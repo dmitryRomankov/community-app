@@ -169,6 +169,12 @@ export interface GameModel {
   approve: boolean;
   appToken?: string;
 }
+
+export interface EventModel {
+  event: Event;
+  userId: number;
+}
+
 export interface HeaderName {
   headerName: string;
   field?: RowProperty;
@@ -194,7 +200,9 @@ export interface GameForSettingForm {
 
 export enum SettingFormType {
   EditGame = 'Edit Game',
-  AddGame = 'Add Game'
+  AddGame = 'Add Game',
+  AddEvent = 'Add Event',
+  EditEvent = 'Edit Event',
 }
 
 export enum chartsTypes {
@@ -233,6 +241,16 @@ export interface FrontEndValidationErrorsGameRegister {
   redirectUrl: { mustBeCorrect: string, required: string };
 }
 
+export interface FrontEndValidationErrorsEventRegister {
+  title: { length: string, required: string };
+  description: { length: string, required: string };
+  city: { length: string, required: string };
+  place: { length: string, required: string };
+  address: { length: string, required: string };
+  locationX: { length: string, required: string };
+  begginingInTime: { length: string, required: string };
+  begginingDate: { length: string, required: string };
+}
 export interface Leaders {
   userToken: string;
   name: number;
@@ -338,6 +356,7 @@ export interface Margin {
 
 export interface Event {
   id?: number;
+  userId?: number;
   title: string;
   description: string;
   city: string;
@@ -346,9 +365,17 @@ export interface Event {
   locationX: string;
   begginingInTime: string;
   begginingDate: string;
-  online: boolean;
+  //online: boolean;
   createAt?: Date;
   updatedAt?: Date;
+}
+
+export interface EventForSettingForm {
+  title: string;
+  city: string;
+  place: string;
+  address: string;
+  locationX: string;
 }
 
 export enum Roles {

@@ -3,7 +3,7 @@ import { from, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { HttpWrapper } from 'services';
 
-import { ErrorBlock, Event, SnackbarType } from 'models';
+import { ErrorBlock, Event, EventModel, SnackbarType } from 'models';
 
 import {
   AddEvent,
@@ -30,11 +30,11 @@ export const addEvent$ = (action$: ActionsObservable<AddEvent>) =>
   action$.pipe(
     ofType(EventsActionTypes.AddEvent),
     switchMap(action =>
-      from(HttpWrapper.post('api/events/add-event', action.payload))
+      from(HttpWrapper.post<EventModel, Event>('api/events/add-event', action.payload))
         .pipe(
-          map(res => new AddEventSuccess(action.payload.event)),
+          map(res => new AddEventSuccess(res.data)),
           catchError((error) => {
-            const messages: ErrorBlock[] = [{ msg: error.response.body }];
+            const messages: ErrorBlock[] = [{ msg: error.response.data }];
             return of(new OpenSnackbar({ type: SnackbarType.Error, messages }), new AddEventError());
           })
         ))
