@@ -1,7 +1,7 @@
 import { FormGroup, TextField } from '@material-ui/core';
 import * as React from 'react';
 
-import { CaButton, CaDatePickers, CaTimePickers, CaEventDescription } from 'components';
+import { CaButton, CaDatePickers, CaEventDescription, CaTimePickers } from 'components';
 import { frontEndValidationEventRegister } from 'constes';
 import { Event, SettingFormType } from 'models';
 import { I18n } from 'react-i18next';
@@ -96,7 +96,10 @@ export class EventForm extends React.Component<EventFormProps, EventFormState> {
     if (this.state.title.length < MIN_LENGTH_TITLE || this.state.title.length > MAX_LENGTH_TITLE) {
       titleErrors.push(frontEndValidationEventRegister.title.length);
     } else {
-      titleErrors = this.removeElFromArrByValue(titleErrors, frontEndValidationEventRegister.title.length);
+      titleErrors = this.removeElFromArrByValue(
+        titleErrors,
+        frontEndValidationEventRegister.title.length
+      );
     }
 
     if (!this.state.description) {
@@ -111,7 +114,10 @@ export class EventForm extends React.Component<EventFormProps, EventFormState> {
     if (this.state.description.length < MIN_LENGTH_DESCRIPTION || this.state.description.length > MAX_LENGTH_DESCRIPTION) {
       descriptionErrors.push(frontEndValidationEventRegister.description.length);
     } else {
-      descriptionErrors = this.removeElFromArrByValue(descriptionErrors, frontEndValidationEventRegister.description.length);
+      descriptionErrors = this.removeElFromArrByValue(
+        descriptionErrors,
+        frontEndValidationEventRegister.description.length
+      );
     }
 
     if (!this.state.city) {
@@ -126,7 +132,10 @@ export class EventForm extends React.Component<EventFormProps, EventFormState> {
     if (this.state.city.length < MIN_LENGTH_CITY || this.state.city.length > MAX_LENGTH_CITY) {
       cityErrors.push(frontEndValidationEventRegister.city.length);
     } else {
-      cityErrors = this.removeElFromArrByValue(cityErrors, frontEndValidationEventRegister.city.length);
+      cityErrors = this.removeElFromArrByValue(
+        cityErrors,
+        frontEndValidationEventRegister.city.length
+      );
     }
 
     if (!this.state.place) {
@@ -161,7 +170,8 @@ export class EventForm extends React.Component<EventFormProps, EventFormState> {
     } else {
       addressErrors = this.removeElFromArrByValue(
         addressErrors,
-        frontEndValidationEventRegister.address.length);
+        frontEndValidationEventRegister.address.length
+      );
     }
 
     if (!this.state.locationX) {
@@ -289,7 +299,7 @@ export class EventForm extends React.Component<EventFormProps, EventFormState> {
         event = Object.assign(event, { id: this.props.id });
       }
 
-      this.props.submit({ event: event, userId: this.props.userId });
+      this.props.submit({ event, userId: this.props.userId });
       history.push('/events');
     }
   }

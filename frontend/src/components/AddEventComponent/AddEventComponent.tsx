@@ -7,8 +7,8 @@ import { AddEvent, AppState } from 'store';
 
 import {
     AuthStatus,
-    EventForSettingForm,
     Event,
+    EventForSettingForm,
     SettingFormType
 } from 'models';
 
@@ -34,7 +34,7 @@ export class AddEventComponent extends React.Component<AddEventComponentProps> {
     }
 
     public onSubmit = (event: Event, userId: number) => {
-        this.props.addEvent({ event: event, userId: userId });
+        this.props.addEvent({ event, userId });
     }
 
     public render(): JSX.Element {
@@ -45,7 +45,9 @@ export class AddEventComponent extends React.Component<AddEventComponentProps> {
                         userId={this.props.user && this.props.user.id}
                         config={SettingFormType.AddEvent}
                         model={initFormForAddingNewEvent}
-                        submit={(payload: { event: Event, userId: number }) => this.props.addEvent({ event: payload.event, userId: payload.userId })}
+                        submit={(payload: { event: Event, userId: number }) => {
+                            return this.props.addEvent({ event: payload.event, userId: payload.userId });
+                        }}
                     />
                 }
             </div>
@@ -59,7 +61,8 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-    addEvent: (payload: { event: Event, userId: number }) => dispatch(new AddEvent({ event: payload.event, userId: payload.userId })),
+    addEvent: (payload: { event: Event, userId: number }) =>
+        dispatch(new AddEvent({ event: payload.event, userId: payload.userId })),
 });
 
 export const CaAddEvent = connect(

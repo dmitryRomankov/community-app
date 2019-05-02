@@ -83,9 +83,10 @@ const styleMap = {
 };
 
 class StyleButton extends React.Component<EventDescriptionProps, {}> {
-  public onToggle: (event: React.MouseEvent<HTMLSpanElement>) => void = (event: React.MouseEvent<HTMLSpanElement>) => {
-    event.preventDefault();
-    this.props.onToggle(this.props.style);
+  public onToggle: (event: React.MouseEvent<HTMLSpanElement>) =>
+    void = (event: React.MouseEvent<HTMLSpanElement>) => {
+      event.preventDefault();
+      this.props.onToggle(this.props.style);
   }
 
   public render(): JSX.Element {
