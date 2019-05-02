@@ -14,3 +14,4 @@ export * from './CaCheckbox';
 export * from './CaDatePicker';
 export * from './CaLocSelect';
 export * from './CaInput';
+export * from './CaEventsTabs';

@@ -11,7 +11,7 @@ export const hoverTableRowBgColor = '#343737';
 
 // tabs colors
 export const defaultTabsTextColor = '#fff';
-export const defaultIndicatorBgColor = '#f4b33a';
+export const defaultIndicatorBgColor = '#0084EA';
 
 // snackbar colors
 export const defaultSnackbarTextColor = '#fff';
