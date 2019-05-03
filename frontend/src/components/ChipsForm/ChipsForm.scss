@@ -17,13 +17,18 @@
   &__checkboxes {
     border-top: 0.1rem solid $bg-gray-dark;
     padding-top: 1.3rem;
+    margin-top: 0.9rem;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
   }
 
   &__checkbox {
-    height: max-content;
     width: 50%;
+    margin-bottom: 1.6rem;
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
   }
 }
