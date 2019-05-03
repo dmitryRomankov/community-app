@@ -25,6 +25,10 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
     }
   }
 
+  public handleAddEvent = () => {
+    this.props.history.push(`/events/add-event`);
+  }
+
   public componentDidMount(): void {
     this.props.loadEvents();
   }
@@ -37,7 +41,7 @@ export class CaEventsPageComponent extends React.Component<EventsProps> {
             <div className='events-page__content'>
               <div className='btn-wrapper'>
                 <div className='btn-container'>
-                  <CaButton className='nav-btn' style={navButtonStyle}>
+                  <CaButton className='nav-btn' style={navButtonStyle} onClick={this.handleAddEvent}>
                     {t('Create new event')}
                   </CaButton>
                 </div>

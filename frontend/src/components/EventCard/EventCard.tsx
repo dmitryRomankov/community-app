@@ -9,10 +9,11 @@ import { changeCommaColor } from '../../utils/changeCommaColor';
 import bookmark from 'assets/svg/icon-bookmark--check.svg';
 import calendarGreen from 'assets/svg/icon-calendar--green.svg';
 import location from 'assets/svg/icon-location.svg';
-import online from 'assets/svg/icon-online.svg';
+// import onlineSvg from 'assets/svg/icon-online.svg';
+// import offlineSvg from 'assets/svg/icon-offline.svg';
 
 export class CaEventCard extends React.PureComponent<EventCardProps> {
-  render() {
+  public render(): JSX.Element {
     const { id, title, city, begginingDate } = this.props;
     const str = 'Java, C++, Ruby, Go';
     const skills = changeCommaColor(str);
@@ -24,7 +25,11 @@ export class CaEventCard extends React.PureComponent<EventCardProps> {
             <NavLink to={`/event/${id}`} >
               <div className='event-card'>
                 <div className='event-card__img'>
-                  <img src={online} alt='' className='event-card__online-status' />
+                  {/* {
+                    online ?
+                      <img src={onlineSvg} alt='' className='event-card__online-status' />
+                        : <img src={offlineSvg} alt='' className='event-card__online-status' />
+                  } */}
                   <div className='event-card__bookmark-icon'>
                     <img src={bookmark} alt='' />
                   </div>

@@ -51,14 +51,15 @@ import {
 
 import {
   AppMenu,
+  CaAddEvent,
+  CaButton,
+  //CaSelect,
   CaLogo,
   CaNavbar,
-  //CaSelect,
   CaSnackbar,
   LoginForm,
   ProtectedRoute,
   RegistrationForm,
-  CaButton,
 } from 'components';
 
 import {
@@ -365,6 +366,14 @@ export class RootComponent extends React.Component<RootProps> {
               path='/event/:id(\d+)'
               render={props => (
                 <EventPage {...props} />
+              )}
+            />
+
+            <Route
+              exact={true}
+              path='/events/add-event'
+              render={props => (
+                <CaAddEvent {...props} />
               )}
             />
 

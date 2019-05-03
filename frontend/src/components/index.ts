@@ -22,3 +22,6 @@ export * from './EventCard';
 export * from './UserButtons';
 export * from './EventsArchive';
 export * from './ChipsForm';
+export * from './EventDescription';
+export * from './AddEventComponent';
+export * from './EventForm';
